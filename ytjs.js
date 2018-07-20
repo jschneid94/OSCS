@@ -57,6 +57,8 @@ function mainVid(id) {
 
 function results() {
 
+    
+
     $("#videosHere").html(`
     <iframe width="300" height="300" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     `);
