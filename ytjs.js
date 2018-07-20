@@ -43,7 +43,7 @@ function resultsLoop(data) {
         for (var i = 1; i < data.items.length; i++) {
         var vid = data.items[i].id.videoId;
         var newDiv = $("<article class='item' data-key='" + vid + "'>");
-        var thumb = $("<img src='" + data.items[i].snippet.thumbnails.medium.url + "' alt='' class='thumb'>");
+        var thumb = $("<a href='https://www.youtube.com/embed/" + vid + "' target ='_blank'><img src='" + data.items[i].snippet.thumbnails.medium.url + "' alt='' class='thumb'></a>");
         var title = $("<h4>" + data.items[i].snippet.title + "</h4>");
         var desc = $("<p>" + data.items[i].snippet.description.substring(0, 100) + "</p>");
 
