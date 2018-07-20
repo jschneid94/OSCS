@@ -1,3 +1,9 @@
+// to do
+// add classes to elements and add styles to css doc
+// change rdp to RDP on all classes/ids
+// try and get russian links to stop showing up
+// clean up main vid function
+
 
 $("form").on("click", "#rdp_makeVideo", function (e) {
     e.preventDefault();
