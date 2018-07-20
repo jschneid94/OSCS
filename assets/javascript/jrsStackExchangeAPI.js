@@ -39,18 +39,20 @@ $(document).ready(function() {
             for (var i = 0; i < jrsResult.length; i++) {
 
                 var jrsNewStackDiv = $("<div>");
-                jrsNewStackDiv.addClass("row bg-dark rounded");
+                jrsNewStackDiv.addClass("jrsNewStrow bg-dark rounded");
 
                 var jrsNewStackContainer = $("<div>")
                                         .addClass("col-md-12 px-0");
 
                 var jrsNewStackTitle = $("<a>");
                 jrsNewStackTitle.attr("src", jrsResult[i].link).text(jrsResult[i].title);
-                jrsNewStackTitle.addClass("row bg-primary text-light mx-auto");
+                jrsNewStackTitle.addClass("row h4 bg-primary text-light px-2 py-2 mx-auto")
+                                .attr("data-link", jrsResult[i].link)
+                                .attr("data-title", jrsResult[i].title);;
 
                 // Bottom row with the results stats: view count and answer score
                 var jrsStackStats = $("<div>");
-                jrsStackStats.addClass("row bg-dark")
+                jrsStackStats.addClass("row bg-dark py-1 px-5")
 
                     // View count
                     var jrsViewCount = $("<span>");

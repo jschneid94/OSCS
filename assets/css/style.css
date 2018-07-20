@@ -2,3 +2,15 @@
     padding-left: 0px;
     padding-right: 0px;
 }
+
+.jrsNewStackDiv {
+    height: 200px;
+}
+
+.jrsNewQuestion {
+    height: 40%;
+}
+
+.jrsNewStats {
+    height: auto;
+}
