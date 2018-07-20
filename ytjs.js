@@ -2,9 +2,6 @@
 $("form").on("click", "#rdp_makeVideo", function (e) {
     e.preventDefault();
 
-var search = $("#rdp_search").val();
-console.log(search, "search");
-
 var youtubeApiKey = "AIzaSyDZ4WJqvmeaEhTRbGq9uNHPYjUy4pnlsn8";
 
 var queryURL = "https://www.googleapis.com/youtube/v3/search"
@@ -16,23 +13,22 @@ var options = {
     q: encodeURIComponent($("#rdp_search").val()).replace(/%20/g, "+"),
     maxResults: 5,
     order: "viewCount",
+    relevanceLanguage: "en",
+    regionCode: "US",
     publishedAfter: "2016-01-01T00:00:00Z"
 }
 
+$('#rdp_smallerVids').empty();
 loadVids();
 
 function loadVids() {
     $.getJSON(queryURL, options, function(data){
         console.log(data, "data");
         var id = data.items[0].id.videoId;
-        // console.log(data.items[0].id.videoID);
-        console.log(id, "id")
         mainVid(id);
         resultsLoop(data);
     })
 }
-        
-{/* <iframe width="1483" height="683" src="https://www.youtube.com/embed/yfoY53QXEnI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> */}
 
   
 function mainVid(id) {
@@ -44,29 +40,21 @@ function mainVid(id) {
 
 function resultsLoop(data) {
 
-    $.each(data.items, function (i, item) {
-
-        var thumb = item.snippet.thumbnails.medium.url;
-        var title = item.snippet.title;
-        var desc = item.snippet.description.substring(0, 100);
+        for (var i = 1; i < data.items.length; i++) {
         var vid = data.items[i].id.videoId;
-        console.log(thumb, "thumb")
-        console.log(title, "title")
-        console.log(desc, "vid")
-        console.log(vid, "vid")
+        var newDiv = $("<article class='item' data-key='" + vid + "'>");
+        var thumb = $("<img src='" + data.items[i].snippet.thumbnails.medium.url + "' alt='' class='thumb'>");
+        var title = $("<h4>" + data.items[i].snippet.title + "</h4>");
+        var desc = $("<p>" + data.items[i].snippet.description.substring(0, 100) + "</p>");
 
-        $('#rdp_smallerVids').append(`
-                        <article class="item" data-key="${vid}">
 
-                            <img src="${thumb}" alt="" class="thumb">
-                            <div class="details">
-                                <h4>${title}</h4>
-                                <p>${desc}</p>
-                            </div>
+        
+        newDiv.append(thumb, title, desc);
 
-                        </article>
-                    `);
-    });
+
+        $('#rdp_smallerVids').append(newDiv);
+        }
+
 
 }
 
