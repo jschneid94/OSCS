@@ -41,7 +41,7 @@ function loadVids() {
         console.log(data);
         var id = data.items[0].id.videoID;
         mainVid(id);
-        results();
+        // results();
 
     });
 }
@@ -55,15 +55,15 @@ function mainVid(id) {
     `)
 };
 
-function results() {
+// function results() {
 
-    
 
-    $("#videosHere").html(`
-    <iframe width="300" height="300" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    `);
 
-}
+//     $("#videosHere").html(`
+//     <iframe width="300" height="300" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+//     `);
+
+// }
 // $.ajax({
 //     url: queryURL,
 //     method: "GET"
