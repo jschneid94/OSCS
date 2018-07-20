@@ -39,31 +39,35 @@ $(document).ready(function() {
             for (var i = 0; i < jrsResult.length; i++) {
 
                 var jrsNewStackDiv = $("<div>");
-                jrsNewStackDiv.addClass("row bg-dark");
+                jrsNewStackDiv.addClass("row bg-dark rounded");
+
+                var jrsNewStackContainer = $("<div>")
+                                        .addClass("col-md-12 px-0");
 
                 var jrsNewStackTitle = $("<a>");
                 jrsNewStackTitle.attr("src", jrsResult[i].link).text(jrsResult[i].title);
-                jrsNewStackTitle.addClass("col-md-12 bg-primary text-light mx-auto");
+                jrsNewStackTitle.addClass("row bg-primary text-light mx-auto");
 
                 // Bottom row with the results stats: view count and answer score
                 var jrsStackStats = $("<div>");
-                jrsStackStats.addClass("bg-dark rounded-bottom")
+                jrsStackStats.addClass("row bg-dark")
 
                     // View count
                     var jrsViewCount = $("<span>");
-                    jrsViewCount.addClass("col-md-6 bg-success rounded-circle mx-auto")
+                    jrsViewCount.addClass("col-md-6 bg-success rounded-circle mx-auto text-center")
                                 .text(jrsResult[i].view_count);
 
                     // View answer score
                     var jrsStackScore = $("<span>");
-                    jrsStackScore.addClass("col-md-6 bg-warning rounded-circle mx-auto")
-                                 .text(jrsResult[i].score);
+                    jrsStackScore.addClass("col-md-6 bg-warning rounded-circle mx-auto text-center")
+                                .text(jrsResult[i].score);
 
                 jrsStackStats.append(jrsViewCount, jrsStackScore);
 
-                jrsNewStackDiv.append(jrsNewStackTitle, jrsStackStats);
+                jrsNewStackContainer.append(jrsNewStackTitle, jrsStackStats);
+                jrsNewStackDiv.append(jrsNewStackContainer);
 
-                $("#jrsStackOutput").append(jrsNewStackDiv);
+                $("#jrsStackOutput").append(jrsNewStackDiv, "<br />");
             }
 
         });
