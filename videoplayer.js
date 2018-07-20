@@ -12,7 +12,7 @@ function onYouTubeIframeAPIReady() {
   player = new YT.Player('rdp_player', {
     height: '390',
     width: '640',
-    videoId: 'M7lc1UVf-VE',
+    videoId: id,
     events: {
       'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange
