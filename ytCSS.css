@@ -34,11 +34,11 @@
 
 .RDP_iframeSize {
     width: 100%;
-    height: 80vh;
+    height: 100%;
 }
 
 .RDP_flexBox {
-    max-width: 83%;
+    max-width: 50%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
