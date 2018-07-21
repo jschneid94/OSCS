@@ -39,7 +39,7 @@ $(document).ready(function() {
             for (var i = 0; i < jrsResult.length; i++) {
 
                 var jrsNewStackDiv = $("<div>");
-                jrsNewStackDiv.addClass("jrsNewStrow bg-dark rounded");
+                jrsNewStackDiv.addClass("row bg-dark rounded");
 
                 var jrsNewStackContainer = $("<div>")
                                         .addClass("col-md-12 px-0");

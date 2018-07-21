@@ -14,3 +14,12 @@
 .jrsNewStats {
     height: auto;
 }
+
+.card-body {
+    padding: 1rem;
+}
+
+.circles {
+    width: 100px;
+    height: 100px;
+}
