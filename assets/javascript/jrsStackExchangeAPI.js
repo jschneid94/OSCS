@@ -7,8 +7,8 @@ $(document).ready(function() {
         event.preventDefault();
 
         // Grabs the search term and creates an array of each word
-        var jrsUserInput = $("").val();
-        jrsSearchTerms = jrsUserInput.split("#jrs_searchBar");
+        var jrsUserInput = $("#jrs_searchBar").val();
+        jrsSearchTerms = jrsUserInput.split(" ");
         
         console.log(jrsSearchTerms);
 
