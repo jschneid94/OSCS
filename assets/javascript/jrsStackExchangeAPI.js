@@ -35,7 +35,7 @@ $(document).ready(function() {
 
                 // Creates new div for each result
                 var jrsNewStackCard = $("<div>");
-                jrsNewStackCard.addClass("card mb-5 results");
+                jrsNewStackCard.addClass("card mb-3 results");
 
                 // Break variable for separating hexagons
                 var jrsBr = $("<br />")
@@ -109,7 +109,7 @@ $(document).ready(function() {
                 jrsNewStackCard.append(jrsNewCardContainer, esh_button);
 
                 // Appends the div to the stack output column in the DOM
-                $("EGA_stackoverflowContainer").append(jrsNewStackCard);
+                $(".EGA_stackoverflowContainer").append(jrsNewStackCard);
 
             }
 
