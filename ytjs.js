@@ -16,7 +16,7 @@ $("form").on("click", "#jrs_submit", function (e) {
         part: "snippet",
         key: youtubeApiKey,
         type: "video",
-        q: encodeURIComponent($("#RDP_search").val()).replace(/%20/g, "+"),
+        q: encodeURIComponent($("#jrs_searchBar").val()).replace(/%20/g, "+"),
         maxResults: 5,
         order: "viewCount",
         relevanceLanguage: "en",
@@ -46,7 +46,7 @@ $("form").on("click", "#jrs_submit", function (e) {
 
         var mainDiv = $("<div class='results' id='RDP_mainDiv'></div>");
 
-        var vidDiv = $("<iframe class='RDP_iframeSize' src='https://www.youtube.com/embed/" + id + "frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+        var vidDiv = $("<iframe class='RDP_iframeSize' src='https://www.youtube.com/embed/" + id + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 
         var descDiv = $("<div class='row'></div>");
         var desc = $("<p class='RDP_wordBreak col-md-10'>" + data.items[0].snippet.description + "</p>");

@@ -15,6 +15,9 @@
   <link   rel="stylesheet" 
           href="assets/css/style.css">
 
+  <link   rel="stylesheet" 
+          href="ytCSS.css">
+
   <title>CODE STUDY</title>
 
 </head>
@@ -221,6 +224,27 @@
         <div class="EGA_youtubeContainer">
 
           <!-- INSERT DYNAMIC YOUTUBE CONTENT HERE -->
+          <div class="row">
+
+              <div class="col-md-1"></div>
+
+              <div id="RDP_videosHere" class="col-md-10"></div>
+
+          </div>
+          
+          <br>
+
+          <p id="RDP_thumbDesc"></p>
+
+          <br>
+
+          <div class="row">
+
+              <div class="col-md-1"></div>
+
+              <div id="RDP_smallerVids" class="RDP_flexBox col-md-10"></div>
+
+          </div>
 
         </div>
 
@@ -360,6 +384,8 @@
 
   </div>
 
+  <script   src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> </script>
+
   <script   src="https://code.jquery.com/jquery-3.2.1.min.js" 
             crossorigin="anonymous">
 
@@ -377,6 +403,7 @@
   
   </script>
 
+
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" 
               integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" 
               crossorigin="anonymous">
@@ -393,11 +420,18 @@
 
   <script   src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
+  <script   src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"> </script>
+
+
   <script   src="assets/javascript/EGA_logoDisplays.js"> </script>
 
   <script   src="assets/javascript/EGA_footerTimer.js"> </script>
 
   <script   src="assets/javascript/jrsStackExchangeAPI.js"> </script>
+
+  <script   src="ytjs.js"> </script>
+
+  <script   src="https://apis.google.com/js/client.js?onload=googleApiClientReady"> </script>
 
 </body>
 
