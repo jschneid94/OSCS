@@ -82,7 +82,11 @@ $(document).ready(function() {
 
                     var jrsStackButton = $("<a>");
                     jrsStackButton.addClass("btn row mx-auto text-light jrsStackButton")
-                                .text("Go to StackOverflow");
+                                .text("Go to StackOverflow")
+                                .attr("href", jrsResult[i].link)
+                                .attr("target", "_blank")
+                                .attr("data-link", jrsResult[i].link)
+                                .attr("data-title", jrsResult[i].title);
                 jrsStackTitleButton.append(jrsStackTitle, jrsStackButton);
 
                 jrsNewCardContainer.append(jrsStatsColumn, jrsStackTitleButton);

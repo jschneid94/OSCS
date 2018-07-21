@@ -1,7 +1,7 @@
 .hexagon {
     width: 48px;
     height: 25px;
-    background: red;
+    background: #F69142;
     position: relative;
 }
 .hexagon:before {
@@ -13,7 +13,7 @@
     height: 0;
     border-left: 24px solid transparent;
     border-right: 24px solid transparent;
-    border-bottom: 15px solid red;
+    border-bottom: 15px solid #F69142;
 }
 
 .hexagon:after {
@@ -25,7 +25,7 @@
     height: 0;
     border-left: 24px solid transparent;
     border-right: 24px solid transparent;
-    border-top: 15px solid red;
+    border-top: 15px solid #F69142;
 }
 
 .jrsStatText {
