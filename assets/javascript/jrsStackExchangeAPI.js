@@ -109,7 +109,7 @@ $(document).ready(function() {
                 jrsNewStackCard.append(jrsNewCardContainer, esh_button);
 
                 // Appends the div to the stack output column in the DOM
-                $("#jrsStackOutput").append(jrsNewStackCard);
+                $("EGA_stackoverflowContainer").append(jrsNewStackCard);
 
             }
 
