@@ -30,7 +30,7 @@ $(document).ready(function() {
 
                 // Creates new div for each result
                 var jrsNewStackCard = $("<div>");
-                jrsNewStackCard.addClass("card");
+                jrsNewStackCard.addClass("card mb-5");
 
                 var jrsBr = $("<br />")
 
@@ -92,7 +92,7 @@ $(document).ready(function() {
 
                 jrsNewStackCard.append(jrsNewCardContainer);
 
-                $("#jrsStackOutput").append(jrsNewStackCard, "<br />");
+                $("#jrsStackOutput").append(jrsNewStackCard);
 
             }
 
