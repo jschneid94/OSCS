@@ -78,15 +78,15 @@ $(document).ready(function() {
 
                     var jrsStackTitle = $("<h5>");
                     jrsStackTitle.addClass("card-title text-center mb-2")
-                                .text(jrsResult[i].title);
+                                .text(jrsResult[i].title)
+                                .attr("data-link", jrsResult[i].link)
+                                .attr("data-title", jrsResult[i].title);
 
                     var jrsStackButton = $("<a>");
                     jrsStackButton.addClass("btn row mx-auto text-light jrsStackButton")
                                 .text("Go to StackOverflow")
                                 .attr("href", jrsResult[i].link)
-                                .attr("target", "_blank")
-                                .attr("data-link", jrsResult[i].link)
-                                .attr("data-title", jrsResult[i].title);
+                                .attr("target", "_blank");
                 jrsStackTitleButton.append(jrsStackTitle, jrsStackButton);
 
                 jrsNewCardContainer.append(jrsStatsColumn, jrsStackTitleButton);
