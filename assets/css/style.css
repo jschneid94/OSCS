@@ -362,8 +362,9 @@ a.article:hover {
     position: absolute;
     top: 0;
     left: 0;
+}
 
-  /* STACK EXCHANGE API */
+/* STACK EXCHANGE API */
 .hexagon {
     width: 48px;
     height: 25px;
