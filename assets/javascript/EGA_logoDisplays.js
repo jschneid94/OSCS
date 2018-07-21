@@ -70,3 +70,8 @@ $("#EGA_spotifyApiLogo").on('click', function () {
 
 });
 
+// PREVENT SUBMIT BUTTON FROM REFRESHING PAGE
+
+$('.EGA_searchBtn').click(function (e) {
+  e.preventDefault();
+});
