@@ -38,16 +38,29 @@ $("form").on("click", "#RDP_makeVideo", function (e) {
         $.getJSON(queryURL, options, function (data) {
             console.log(data, "data");
             var id = data.items[0].id.videoId;
-            mainVid(id);
+            mainVid(data);
             resultsLoop(data);
         })
     }
 
-    function mainVid(id) {
+    function mainVid(data) {
+        var id = data.items[0].id.videoId;
 
-        $("#RDP_videosHere").html(`
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    `)
+        var mainDiv = $("<div class='results' id='RDP_mainDiv'></div>");
+        
+        var vidDiv = $("<iframe class='RDP_iframeSize' src='https://www.youtube.com/embed/" + id + "frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+
+        var desc = $("<p class='RDP_wordBreak'>" + data.items[0].snippet.description + "</p>");
+
+        mainDiv.append(vidDiv, desc);
+        // - can add to end of description 
+        
+
+        $("#RDP_videosHere").html(mainDiv);
+    //     $("#RDP_videosHere").html(`
+    // <iframe class="RDP_iframeSize" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    // `)
+    
     };
 
     function resultsLoop(data) {
@@ -55,16 +68,19 @@ $("form").on("click", "#RDP_makeVideo", function (e) {
         for (var i = 1; i < data.items.length; i++) {
             
             var vid = data.items[i].id.videoId;
-
-            var spacingDiv = $("<div class='col-md-1'>")
             
-            var newDiv = $("<div class='item' data-key='" + vid + "'>");
-            var thumb = $("<a href='https://www.youtube.com/embed/" + vid + "' target ='_blank'><img src='" + data.items[i].snippet.thumbnails.medium.url + "' alt='' class='thumb'></a>");
-            var title = $("<h4>" + data.items[i].snippet.title + "</h4>");
-            var desc = $("<p>" + data.items[i].snippet.description.substring(0, 100) + "</p>");
+            var newDiv = $("<div class='RDP_item' data-key='" + vid + "'></div>");
+            var thumb = $("<a href='https://www.youtube.com/embed/" + vid + "' target ='_blank'><img src='" + data.items[i].snippet.thumbnails.high.url + "' alt='' class='RDP_thumb'></a>");
 
-            newDiv.append(thumb, title, desc);
+            var title = $("<p class='RDP_title'>" + data.items[i].snippet.title + "</p>");
 
+            var titleDiv = $("<div class='RDP_titlediv'></div>")
+
+            // var desc = $("<p>" + data.items[i].snippet.description.substring(0, 100) + "</p>");
+
+            titleDiv.append(title);
+
+            newDiv.append(thumb, titleDiv);
 
             $('#RDP_smallerVids').append(newDiv);
         }

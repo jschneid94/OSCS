@@ -9,3 +9,43 @@ form, #results { padding: 0 20px; }
 
 .btn-primary { background: #952b2b; border-color: #957575; }
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus { background: #782b2b;  border-color: #952b2b; } */
+
+.RDP_title {
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+.RDP_wordBreak {
+    word-wrap: break-word;
+    text-align: center;
+}
+
+#RDP_mainDiv {
+    width:100%;
+    height:100%;
+}
+
+.overflow{
+    overflow: auto;
+}
+
+.RDP_thumb {
+    max-width: 100%;
+}
+
+.RDP_titlediv {
+    max-width: 100%;
+}
+
+.RDP_iframeSize {
+    width: 100%;
+    height: 80vh;
+}
+
+.RDP_flexBox {
+    max-width: 83%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
