@@ -7,7 +7,7 @@
 // make description above links
 // need to make the search recognize the radio button clicked
 
-// RDP_thumbDesc Click a thumbnail to watch a video
+
 
 // add class to all results called results
 
@@ -50,20 +50,20 @@ $("form").on("click", "#RDP_makeVideo", function (e) {
         
         var vidDiv = $("<iframe class='RDP_iframeSize' src='https://www.youtube.com/embed/" + id + "frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 
-        var desc = $("<p class='RDP_wordBreak'>" + data.items[0].snippet.description + "</p>");
+        var descDiv = $("<div class='row'></div>");
+        var desc = $("<p class='RDP_wordBreak col-md-10'>" + data.items[0].snippet.description + "</p>");
+        var button = $("<div class='col-md-2'><button type='button' class='btn btn-light favorite'><i class='fas fa-star'></i>Favorite</button></div>");
 
-        mainDiv.append(vidDiv, desc);
-        // - can add to end of description 
-        
+        descDiv.append(desc, button);
+        mainDiv.append(vidDiv, descDiv);
 
         $("#RDP_videosHere").html(mainDiv);
-    //     $("#RDP_videosHere").html(`
-    // <iframe class="RDP_iframeSize" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    // `)
     
     };
 
     function resultsLoop(data) {
+
+        $("#RDP_thumbDesc").html("Click a thumbnail below to watch a video");
 
         for (var i = 1; i < data.items.length; i++) {
             
@@ -75,8 +75,6 @@ $("form").on("click", "#RDP_makeVideo", function (e) {
             var title = $("<p class='RDP_title'>" + data.items[i].snippet.title + "</p>");
 
             var titleDiv = $("<div class='RDP_titlediv'></div>")
-
-            // var desc = $("<p>" + data.items[i].snippet.description.substring(0, 100) + "</p>");
 
             titleDiv.append(title);
 
