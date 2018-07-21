@@ -79,6 +79,7 @@ $(document).ready(function() {
                     var jrsStackTitle = $("<h5>");
                     jrsStackTitle.addClass("card-title text-center mb-2")
                                 .text(jrsResult[i].title)
+                                .attr("data-resultNum", i)
                                 .attr("data-link", jrsResult[i].link)
                                 .attr("data-title", jrsResult[i].title);
 
