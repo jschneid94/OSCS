@@ -38,38 +38,81 @@ $(document).ready(function() {
 
             for (var i = 0; i < jrsResult.length; i++) {
 
-                var jrsNewStackDiv = $("<div>");
-                jrsNewStackDiv.addClass("row bg-dark rounded");
+                var jrsNewStackCard = $("<div>");
+                jrsNewStackCard.addClass("card");
 
-                var jrsNewStackContainer = $("<div>")
-                                        .addClass("col-md-12 px-0");
+                var jrsNewCardContainer = $("<div>")
+                jrsNewCardContainer.addClass("card-body row");
 
-                var jrsNewStackTitle = $("<a>");
-                jrsNewStackTitle.attr("src", jrsResult[i].link).text(jrsResult[i].title);
-                jrsNewStackTitle.addClass("row h4 bg-primary text-light px-2 py-2 mx-auto")
-                                .attr("data-link", jrsResult[i].link)
-                                .attr("data-title", jrsResult[i].title);;
+                var jrsStatsColumn = $("<div>");
+                jrsStatsColumn.addClass("col-md-3");
 
-                // Bottom row with the results stats: view count and answer score
-                var jrsStackStats = $("<div>");
-                jrsStackStats.addClass("row bg-dark py-1 px-5")
+                    var jrsStackLogo = $("<img>");
+                    jrsStackLogo.addClass("row mx-auto mb-3 jrsStackLogo")
+                                .attr("src", "assets/images/jrsStackLogo.png");
 
-                    // View count
-                    var jrsViewCount = $("<span>");
-                    jrsViewCount.addClass("col-md-6 bg-success rounded-circle mx-auto text-center")
-                                .text(jrsResult[i].view_count);
+                    var jrsViewHex = $("<div>");
+                    jrsViewHex.addClass("row mx-auto my-2 hexagon text-center");
 
-                    // View answer score
-                    var jrsStackScore = $("<span>");
-                    jrsStackScore.addClass("col-md-6 bg-warning rounded-circle mx-auto text-center")
-                                .text(jrsResult[i].score);
+                        var jrsViewCount = $("<div>");
+                        jrsViewCount.addClass("jrsStatText mx-auto my-auto")
+                                    .text("Views <br />" + jrsResult[i].view_count);
+                    jrsViewHex.append(jrsViewCount);
 
-                jrsStackStats.append(jrsViewCount, jrsStackScore);
+                    var jrsScoreHex = $("<div>");
+                    jrsScoreHex.addClass("row mx-auto my-2 hexagon text-center");
 
-                jrsNewStackContainer.append(jrsNewStackTitle, jrsStackStats);
-                jrsNewStackDiv.append(jrsNewStackContainer);
+                        var jrsScoreCount = $("<div>");
+                        jrsScoreCount.addClass("jrsStatText mx-auto my-auto")
+                                    .text("Score <br />" + jrsResult[i].score);
+                    jrsScoreHex.append(jrsScoreCount);
 
-                $("#jrsStackOutput").append(jrsNewStackDiv, "<br />");
+                jrsStatsColumn.append(jrsStackLogo, jrsViewHex, jrsScoreHex);
+
+                var jrsStackTitleButton = $("<div>");
+                jrsStackTitleButton.addClass("col-md-9 jrsStackTitleButton");
+
+                    var jrsStackTitle = $("<h5>");
+                    jrsStackTitle.addClass("card-title text-center mb-2")
+                                .text(jrsResult[i].title);
+
+                    var jrsStackButton = $("<a>");
+                    jrsStackButton.addClass("btn row mx-auto jrsStackButton")
+                                .text("Go to StackOverflow");
+                jrsStackTitleButton.append(jrsStackTitle, jrsStackButton);
+
+                jrsNewCardContainer.append(jrsStatsColumn, jrsStackTitleButton);
+
+                jrsNewStackCard.append(jrsNewCardContainer);
+
+                $("#jrsStackOutput").append(jrsNewStackCard, "<br />");
+
+                // var jrsNewStackTitle = $("<a>");
+                // jrsNewStackTitle.attr("src", jrsResult[i].link).text(jrsResult[i].title);
+                // jrsNewStackTitle.addClass("row h4 bg-primary text-light px-2 py-2 mx-auto")
+                //                 .attr("data-link", jrsResult[i].link)
+                //                 .attr("data-title", jrsResult[i].title);;
+
+                // // Bottom row with the results stats: view count and answer score
+                // var jrsStackStats = $("<div>");
+                // jrsStackStats.addClass("row bg-dark py-1 px-5")
+
+                //     // View count
+                //     var jrsViewCount = $("<span>");
+                //     jrsViewCount.addClass("col-md-6 bg-success rounded-circle mx-auto text-center")
+                //                 .text(jrsResult[i].view_count);
+
+                //     // View answer score
+                //     var jrsStackScore = $("<span>");
+                //     jrsStackScore.addClass("col-md-6 bg-warning rounded-circle mx-auto text-center")
+                //                 .text(jrsResult[i].score);
+
+                // jrsStackStats.append(jrsViewCount, jrsStackScore);
+
+                // jrsNewCardContainer.append(jrsNewStackTitle, jrsStackStats);
+                // jrsNewStackCard.append(jrsNewCardContainer);
+
+                // $("#jrsStackOutput").append(jrsNewStackCard, "<br />");
             }
 
         });
