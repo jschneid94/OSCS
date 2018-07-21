@@ -8,8 +8,8 @@
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link   rel="stylesheet" 
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" 
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
           crossorigin="anonymous">
 
   <link   rel="stylesheet" 
@@ -20,8 +20,8 @@
 </head>
 
 <body>
-
-  <div class="container-fluid">
+  
+<div class="container-fluid">
 
 <!-- API LOGO SECTION -->
 
@@ -160,7 +160,7 @@
 
       <div class="col-lg-6">
 
-        <nav class="navbar navbar-light">
+        <nav class="navbar navbar-light EGA_navbar">
 
           <form class="form EGA_searchBar">
 
@@ -248,6 +248,101 @@
     
 <!-- END OF DYNAMIC LOGO SECTION -->
 
+<!-- SIDE BAR MENU SECTION -->
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div id="dismiss">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+
+        <div class="sidebar-header">
+            <h3>Bootstrap Sidebar</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>Dummy Heading</p>
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a href="#">Home 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">About</a>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="#">Page 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Portfolio</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+            <li>
+                <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+            </li>
+            <li>
+                <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <nav class="">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fas fa-align-left"></i>
+                    <span>Toggle Sidebar</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Page</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</div>
+
+<div class="overlay"></div>
+
+<!-- END OF SIDE BAR MENU -->
+
 <!-- FOOTER SECTION -->
 
     <div  class="card-footer"
@@ -279,6 +374,20 @@
             crossorigin="anonymous">
   
   </script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" 
+              integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" 
+              crossorigin="anonymous">
+</script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" 
+              integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" 
+              crossorigin="anonymous">
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js">
+
+</script>
 
   <script   src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
