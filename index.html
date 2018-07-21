@@ -21,7 +21,9 @@
 
 <body>
 
-  <div class="container">
+  <div class="container-fluid">
+
+<!-- API LOGO SECTION -->
 
     <div class="row EGA_apiRow">
 
@@ -76,9 +78,13 @@
 
     </div>
 
+<!-- END OF API LOGO SECTION -->
+
+<!-- RADIO BUTTON SECTION -->
+
     <div class="row EGA_searchRow">
 
-      <div class="col-lg-6">
+      <div class="col-lg-6 EGA_radioColumn">
 
         <div  class="btn-group btn-group-toggle EGA_radioBoxes" 
               data-toggle="buttons">
@@ -148,11 +154,15 @@
 
       </div>
 
+<!-- END OF RADIO BUTTON SECTION -->
+
+<!-- SEARCH BAR SECTION -->
+
       <div class="col-lg-6">
 
         <nav class="navbar navbar-light">
 
-          <form class="form searchBar">
+          <form class="form EGA_searchBar">
 
             <input  class="form-control mr-sm-2" 
                     type="search" 
@@ -172,6 +182,10 @@
       </div>
 
     </div>
+
+<!-- END OF SEARCH BAR SECTION -->
+
+<!-- DYNAMIC LOGO SECTION -->
 
     <div class="row EGA_displayRow">
 
@@ -197,9 +211,9 @@
 
       <div class="col-lg-6 EGA_youTubeColumns">
 
-        <img  src="assets/images/EGA_youtubeTitleLogo.png" 
+        <img  src="assets/images/EGA_youtubeLogo.png" 
               class="hidden" 
-              id="EGA_youtubeTitleLogo" 
+              id="EGA_youtubeLogo" 
               alt="">
 
         <div class="EGA_youtubeContainer">
@@ -232,6 +246,10 @@
 
     </div>
     
+<!-- END OF DYNAMIC LOGO SECTION -->
+
+<!-- FOOTER SECTION -->
+
     <div  class="card-footer"
           id="EGA_footer">
 
@@ -240,7 +258,9 @@
       </small>
 
     </div>
-    
+
+<!-- END OF FOOTER SECTION -->
+
   </div>
 
   <script   src="https://code.jquery.com/jquery-3.2.1.min.js" 
@@ -264,7 +284,7 @@
 
   <script   src="assets/javascript/EGA_logoDisplays.js"> </script>
 
-  <script   src="assets/javascript/EGA_footerTimer"> </script>
+  <script   src="assets/javascript/EGA_footerTimer.js"> </script>
 
 </body>
 

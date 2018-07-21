@@ -1,69 +1,72 @@
-$("#EGA_youtubeApiLogo").on('click', function () {
-
-  if ($("#EGA_youtubeTitleLogo").hasClass("hidden")) {
-
-    $("#EGA_youtubeTitleLogo").removeClass("hidden");
-    $("#EGA_youtubeTitleLogo").addClass("visible");
-
-  } else if ($("#EGA_youtubeTitleLogo").hasClass("visible")) {
-
-    $("#EGA_youtubeTitleLogo").removeClass("visible");
-    $("#EGA_youtubeTitleLogo").addClass("hidden");
-  }
-});
-
-$("#EGA_stackoverflowApiLogo").on('click', function () {
-
-  if ($("#EGA_stackoverflowLogo").hasClass("hidden")) {
-
-    $("#EGA_stackoverflowLogo").removeClass("hidden");
-    $("#EGA_stackoverflowLogo").addClass("visible");
-
-  } else if ($("#EGA_stackoverflowLogo").hasClass("visible")) {
-
-    $("#EGA_stackoverflowLogo").removeClass("visible");
-    $("#EGA_stackoverflowLogo").addClass("hidden");
-  }
-});
-
-$("#EGA_amazonApiLogo").on('click', function () {
-
-  if ($("#EGA_amazonLogo").hasClass("hidden")) {
-
-    $("#EGA_amazonLogo").removeClass("hidden");
-    $("#EGA_amazonLogo").addClass("visible");
-
-  } else if ($("#EGA_amazonLogo").hasClass("visible")) {
-
-    $("#EGA_amazonLogo").removeClass("visible");
-    $("#EGA_amazonLogo").addClass("hidden");
-  }
-});
+// GITHUB API TOGGLE SWITCH
 
 $("#EGA_githubApiLogo").on('click', function () {
 
-  if ($("#EGA_githubLogo").hasClass("hidden")) {
+  if ($("#EGA_spotifyLogo").is(':visible')) {
+    $("#EGA_spotifyLogo").fadeOut(500);
+    
+    setTimeout(function(){
+      $("#EGA_githubLogo").fadeToggle(500)}, 500);
 
-    $("#EGA_githubLogo").removeClass("hidden");
-    $("#EGA_githubLogo").addClass("visible");
-
-  } else if ($("#EGA_githubLogo").hasClass("visible")) {
-
-    $("#EGA_githubLogo").removeClass("visible");
-    $("#EGA_githubLogo").addClass("hidden");
+  } else {
+    $("#EGA_githubLogo").fadeToggle(500);
   }
+
 });
+
+// YOUTUBE API TOGGLE SWITCH
+
+$("#EGA_youtubeApiLogo").on('click', function () {
+  
+  $("#EGA_youtubeLogo").fadeToggle();
+
+});
+
+// STACKOVERFLOW API TOGGLE SWITCH
+
+$("#EGA_stackoverflowApiLogo").on('click', function () {
+
+  if ($("#EGA_amazonLogo").is(':visible')) {
+    $("#EGA_amazonLogo").fadeOut(500);
+
+    setTimeout(function(){
+    $("#EGA_stackoverflowLogo").fadeToggle(500)}, 500);
+
+  } else {
+    $("#EGA_stackoverflowLogo").fadeToggle(500);
+  }
+
+});
+
+// AMAZON API TOGGLE SWITCH
+
+$("#EGA_amazonApiLogo").on('click', function () {
+
+  if ($("#EGA_stackoverflowLogo").is(':visible')) {
+    $("#EGA_stackoverflowLogo").fadeOut(500);
+
+    setTimeout(function(){
+    $("#EGA_amazonLogo").fadeToggle(500)}, 500);
+
+  } else {
+    $("#EGA_amazonLogo").fadeToggle(500);
+  }
+
+});
+
+// SPOTIFY API TOGGLE SWITCH
 
 $("#EGA_spotifyApiLogo").on('click', function () {
 
-  if ($("#EGA_spotifyLogo").hasClass("hidden")) {
+  if ($("#EGA_githubLogo").is(':visible')) {
+    $("#EGA_githubLogo").fadeOut(500);
 
-    $("#EGA_spotifyLogo").removeClass("hidden");
-    $("#EGA_spotifyLogo").addClass("visible");
+    setTimeout(function(){
+    $("#EGA_spotifyLogo").fadeToggle(500)}, 500);
 
-  } else if ($("#EGA_spotifyLogo").hasClass("visible")) {
-
-    $("#EGA_spotifyLogo").removeClass("visible");
-    $("#EGA_spotifyLogo").addClass("hidden");
+  } else {
+    $("#EGA_spotifyLogo").fadeToggle();
   }
+
 });
+
