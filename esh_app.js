@@ -8,18 +8,16 @@ $(document).ready(function () {
     // access div by class/id
 
     // on any result click, append to favorites section
-    $(document).on("click", "button", function () {
+    $(document).on("click", "results:button", function () {
         //$(this) needs to be the whole search div
-
         console.log($(this).parent()[0]);
         var esh_resulttomove = $(this).parent()[0];
         $(this).remove();
         $("#esh_favorites").append(esh_resulttomove);
 
         // save to local storage
-
-        // localStorage.setItem("favorites-" + esh_favoritescounter, $(this));
-        // esh_favoritescounter++;
+        localStorage.setItem("favorites-" + esh_favoritescounter, esh_resulttomove);
+        esh_favoritescounter++;
 
 
 

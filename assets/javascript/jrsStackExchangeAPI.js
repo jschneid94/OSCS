@@ -1,29 +1,19 @@
-// // Initialize API
-// SE.init({
-//     clientId: 12819,
-//     key: 'sXqJXycdNOTwFnGKZUSDVw((',
-//     // Used for cross domain communication, it will be validated
-//     channelUrl: 'https://EneaAntonicelli.github/Project1/blank',
-//     complete: function (data) {
-//         $("#jrsSearchButton")
-//     }
-// });
 
 var jrsSearchTerms = []
 
 $(document).ready(function() {
 
-    $("#jrsSearchButton").on("click", function() {
+    $("#jrs_submit").on("click", function() {
         event.preventDefault();
 
         // Grabs the search term and creates an array of each word
-        var jrsUserInput = $("#jrsUserInput").val();
+        var jrsUserInput = $("#jrs_searchBar").val();
         jrsSearchTerms = jrsUserInput.split(" ");
 
         // Creates a string that will be used for the queryURL
         var jrsStackSearchTerm = jrsSearchTerms.join(" ");
 
-        var jrsQueryUrl = "https://api.stackexchange.com/2.2/similar?order=desc&sort=relevance&title=" + jrsStackSearchTerm + "&site=stackoverflow&key=sXqJXycdNOTwFnGKZUSDVw((";
+        var jrsQueryUrl = "https://api.stackexchange.com/2.2/similar?pagesize=5&order=desc&sort=relevance&title=" + jrsStackSearchTerm + "&site=stackoverflow&key=sXqJXycdNOTwFnGKZUSDVw((";
     
         $.ajax({
             url: jrsQueryUrl,
@@ -34,6 +24,7 @@ $(document).ready(function() {
 
             for (var i = 0; i < jrsResult.length; i++) {
 
+                // Creates new div for each result
                 var jrsNewStackCard = $("<div>");
                 jrsNewStackCard.addClass("card results");
 
@@ -42,13 +33,16 @@ $(document).ready(function() {
                 var jrsNewCardContainer = $("<div>")
                 jrsNewCardContainer.addClass("card-body row");
 
+                // Column with the stack logo, view count, and top rated score.
                 var jrsStatsColumn = $("<div>");
                 jrsStatsColumn.addClass("col-md-3");
 
+                    // Stack logo
                     var jrsStackLogo = $("<img>");
                     jrsStackLogo.addClass("row mx-auto mb-3 jrsStackLogo")
                                 .attr("src", "assets/images/jrsStackLogo.png");
 
+                    // View Count
                     var jrsViewHex = $("<div>");
                     jrsViewHex.addClass("row mx-auto my-2 hexagon text-center");
 
@@ -58,6 +52,7 @@ $(document).ready(function() {
                         jrsViewCount.append("<div>" + jrsResult[i].view_count + "</div>");
                     jrsViewHex.append(jrsViewCount);
 
+                    // Top rated score
                     var jrsScoreHex = $("<div>");
                     jrsScoreHex.addClass("row mx-auto my-2 hexagon text-center");
 
@@ -69,16 +64,24 @@ $(document).ready(function() {
 
                 jrsStatsColumn.append(jrsStackLogo, jrsViewHex, jrsBr, jrsScoreHex);
 
+                // Column with the result title and link to stack overflow
                 var jrsStackTitleButton = $("<div>");
                 jrsStackTitleButton.addClass("col-md-9 jrsStackTitleButton");
 
+                    // Title
                     var jrsStackTitle = $("<h5>");
                     jrsStackTitle.addClass("card-title text-center mb-2")
-                                .text(jrsResult[i].title);
+                                .text(jrsResult[i].title)
+                                .attr("data-resultNum", i)
+                                .attr("data-link", jrsResult[i].link)
+                                .attr("data-title", jrsResult[i].title);
 
+                    // Button
                     var jrsStackButton = $("<a>");
                     jrsStackButton.addClass("btn row mx-auto text-light jrsStackButton")
-                                .text("Go to StackOverflow");
+                                .text("Go to StackOverflow")
+                                .attr("href", jrsResult[i].link)
+                                .attr("target", "_blank");
                 jrsStackTitleButton.append(jrsStackTitle, jrsStackButton);
                 
                 jrsNewCardContainer.append(jrsStatsColumn, jrsStackTitleButton);
@@ -89,32 +92,6 @@ $(document).ready(function() {
 
                 $("#jrsStackOutput").append(jrsNewStackCard);
 
-                // var jrsNewStackTitle = $("<a>");
-                // jrsNewStackTitle.attr("src", jrsResult[i].link).text(jrsResult[i].title);
-                // jrsNewStackTitle.addClass("row h4 bg-primary text-light px-2 py-2 mx-auto")
-                //                 .attr("data-link", jrsResult[i].link)
-                //                 .attr("data-title", jrsResult[i].title);;
-
-                // // Bottom row with the results stats: view count and answer score
-                // var jrsStackStats = $("<div>");
-                // jrsStackStats.addClass("row bg-dark py-1 px-5")
-
-                //     // View count
-                //     var jrsViewCount = $("<span>");
-                //     jrsViewCount.addClass("col-md-6 bg-success rounded-circle mx-auto text-center")
-                //                 .text(jrsResult[i].view_count);
-
-                //     // View answer score
-                //     var jrsStackScore = $("<span>");
-                //     jrsStackScore.addClass("col-md-6 bg-warning rounded-circle mx-auto text-center")
-                //                 .text(jrsResult[i].score);
-
-                // jrsStackStats.append(jrsViewCount, jrsStackScore);
-
-                // jrsNewCardContainer.append(jrsNewStackTitle, jrsStackStats);
-                // jrsNewStackCard.append(jrsNewCardContainer);
-
-                // $("#jrsStackOutput").append(jrsNewStackCard, "<br />");
             }
 
         });

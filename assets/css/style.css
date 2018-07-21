@@ -1,7 +1,197 @@
+/* GLOBAL */
+
+.row {
+    margin: 0;
+}
+
+/* API IMAGE SECTION */
+
+img {
+    margin: 30px -40px;
+}
+.EGA_apiImg {
+    transition: transform .2s;
+    transition: 0.2s;
+}
+.EGA_apiImg:hover {
+    transform: scale(1.05);
+    filter : drop-shadow(0 5px 5px rgba(0, 0, 0, 0.438));
+}
+
+.EGA_apiImg:active {
+    transform: scale(.9);
+    filter : drop-shadow(0 5px 5px rgba(255, 255, 255, 0.438));
+}
+
+.EGA_apiRow {
+    background: #A8BCBA;
+    width: 100%;
+    
+}
+
+/* SEARCH BAR SECTION */
+
+.EGA_searchRow {
+    background: #A8BCBA;
+    width: 100%;
+    height: 250px;
+}
+
+.btn-outline-success {
+    color: white;
+    border-color: white;
+}
+
+.navbar {
+    margin-top: 80px;
+}
+.EGA_searchBar {
+    width: 100%;
+    display: block;
+    margin-right: 40px;
+}
+
+.EGA_searchBtn {
+    margin-top: 20px !important;
+    float:right;
+    
+}
+
+/* RADIO BUTTONS SECTION */
+
+.EGA_radioButtons {
+    padding: 40px;
+}    
+
+.EGA_radioButton {
+    display: inline-block;
+    float: left;
+}
+
+.input-group-text{
+    background-color: transparent;
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
+  }
+
+.EGA_radioBoxText {
+    margin-left: 20px;
+    font-size: 1.5em;
+    color: #50697D;
+}
+
+.EGA_radioColumn {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.EGA_radioBoxes {
+    margin-top: 90px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    height: 40px;
+}
+
+.radio-inline {
+    padding: 15px;
+}
+
+.btn-secondary {
+    background-color: #50697D;
+    border-color: #50697D
+}
+
+/* DISPLAY AREA COLUMNS */
+
+.EGA_gitHubColumns {
+    background: #ACC66D;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    
+}
+
+.EGA_youTubeColumns {
+    background: #50697D;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.EGA_stackOverFlowColumns {
+    background: #D9CFE7;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+/* DYNAMIC LOGOS */
+
+#EGA_youtubeLogo {
+    max-height: 75px;
+    margin-top: 10px;
+   
+}
+
+#EGA_stackoverflowLogo  {
+    
+    max-height: 50px;
+    margin-top: 10px;
+    margin: 0;  
+    position: absolute;    
+}
+
+#EGA_githubLogo  {
+    
+    max-height: 35px;
+    margin-top: 10px; 
+    margin: 0;
+    position: absolute;   
+}
+
+#EGA_spotifyLogo  {
+    
+    max-height: 50px;
+    margin-top: 10px; 
+    margin: 0;
+    position: absolute;   
+}
+
+#EGA_amazonLogo {
+
+    max-height: 75px;
+    margin-top: 10px;
+    margin: 0;  
+    position: absolute;  
+}
+
+/* FOOTER */
+
+#EGA_footer {
+    background-color: #50697D;
+    margin-top: 10px;  
+    color: white;
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
+
+/* STACK EXCHANGE API */
 .hexagon {
     width: 48px;
     height: 25px;
-    background: red;
+    background: #F69142;
     position: relative;
 }
 .hexagon:before {
@@ -13,7 +203,7 @@
     height: 0;
     border-left: 24px solid transparent;
     border-right: 24px solid transparent;
-    border-bottom: 15px solid red;
+    border-bottom: 15px solid #F69142;
 }
 
 .hexagon:after {
@@ -25,7 +215,7 @@
     height: 0;
     border-left: 24px solid transparent;
     border-right: 24px solid transparent;
-    border-top: 15px solid red;
+    border-top: 15px solid #F69142;
 }
 
 .jrsStatText {
