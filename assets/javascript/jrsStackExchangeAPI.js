@@ -19,12 +19,9 @@ $(document).ready(function() {
         // Grabs the search term and creates an array of each word
         var jrsUserInput = $("#jrsUserInput").val();
         jrsSearchTerms = jrsUserInput.split(" ");
-        
-        console.log(jrsSearchTerms);
 
         // Creates a string that will be used for the queryURL
         var jrsStackSearchTerm = jrsSearchTerms.join(" ");
-        console.log(jrsStackSearchTerm);
 
         var jrsQueryUrl = "https://api.stackexchange.com/2.2/similar?order=desc&sort=relevance&title=" + jrsStackSearchTerm + "&site=stackoverflow&key=sXqJXycdNOTwFnGKZUSDVw((";
     
@@ -32,14 +29,13 @@ $(document).ready(function() {
             url: jrsQueryUrl,
             method: "GET"
         }).then(function(response) {
-            console.log(response);
-
+            
             var jrsResult = response.items;
 
             for (var i = 0; i < jrsResult.length; i++) {
 
                 var jrsNewStackCard = $("<div>");
-                jrsNewStackCard.addClass("card");
+                jrsNewStackCard.addClass("card results");
 
                 var jrsBr = $("<br />")
 
@@ -84,12 +80,14 @@ $(document).ready(function() {
                     jrsStackButton.addClass("btn row mx-auto text-light jrsStackButton")
                                 .text("Go to StackOverflow");
                 jrsStackTitleButton.append(jrsStackTitle, jrsStackButton);
-
+                
                 jrsNewCardContainer.append(jrsStatsColumn, jrsStackTitleButton);
 
-                jrsNewStackCard.append(jrsNewCardContainer);
+                var esh_button = $("<button type='button' class='btn btn-light favorite'><i class='fas fa-star'></i> Favorite</button>");
 
-                $("#jrsStackOutput").append(jrsNewStackCard, "<br />");
+                jrsNewStackCard.append(jrsNewCardContainer, esh_button);
+
+                $("#jrsStackOutput").append(jrsNewStackCard);
 
                 // var jrsNewStackTitle = $("<a>");
                 // jrsNewStackTitle.attr("src", jrsResult[i].link).text(jrsResult[i].title);
