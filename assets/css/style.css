@@ -1,12 +1,13 @@
-
+/* GLOBAL */
 
 .row {
     margin: 0;
-
 }
 
+/* API IMAGE SECTION */
+
 img {
-    margin: 30px -20px;
+    margin: 30px -40px;
 }
 .EGA_apiImg {
     transition: transform .2s;
@@ -25,8 +26,10 @@ img {
 .EGA_apiRow {
     background: #A8BCBA;
     width: 100%;
-    height: 150px;
+    
 }
+
+/* SEARCH BAR SECTION */
 
 .EGA_searchRow {
     background: #A8BCBA;
@@ -39,7 +42,22 @@ img {
     border-color: white;
 }
 
-/* RADIO BUTTONS */
+.navbar {
+    margin-top: 80px;
+}
+.EGA_searchBar {
+    width: 100%;
+    display: block;
+    margin-right: 40px;
+}
+
+.EGA_searchBtn {
+    margin-top: 20px !important;
+    float:right;
+    
+}
+
+/* RADIO BUTTONS SECTION */
 
 .EGA_radioButtons {
     padding: 40px;
@@ -64,12 +82,20 @@ input[type=checkbox] {
     color: #50697D;
 }
 
+.EGA_radioColumn {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
 .EGA_radioBoxes {
     margin-top: 90px;
-    margin-left: 40px;
     background-color: aliceblue;
     border-radius: 10px;
+    height: 40px;
 }
+
 .radio-inline {
     padding: 15px;
 }
@@ -79,37 +105,85 @@ input[type=checkbox] {
     border-color: #50697D
 }
 
-.navbar {
-    margin-top: 80px;
-}
-.searchBar {
-    width: 100%;
-    display: block;
-}
+/* DISPLAY AREA COLUMNS */
 
-.searchBtn {
-    margin-top: 20px !important;
-    float:right;
-    
-}
 .EGA_gitHubColumns {
     background: #ACC66D;
     width: 100%;
     height: 400px;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    
 }
 
 .EGA_youTubeColumns {
     background: #50697D;
     width: 100%;
     height: 400px;
+    display: flex;
+    justify-content: center;
 }
 
-.EGA_youtubeTitleLogo {
-    
-}
 
 .EGA_stackOverFlowColumns {
     background: #D9CFE7;
     width: 100%;
     height: 400px;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
 }
+
+/* DYNAMIC LOGOS */
+
+#EGA_youtubeLogo {
+    max-height: 75px;
+    margin-top: 10px;
+   
+}
+
+#EGA_stackoverflowLogo  {
+    
+    max-height: 50px;
+    margin-top: 10px;
+    margin: 0;  
+    position: absolute;    
+}
+
+#EGA_githubLogo  {
+    
+    max-height: 35px;
+    margin-top: 10px; 
+    margin: 0;
+    position: absolute;   
+}
+
+#EGA_spotifyLogo  {
+    
+    max-height: 50px;
+    margin-top: 10px; 
+    margin: 0;
+    position: absolute;   
+}
+
+#EGA_amazonLogo {
+
+    max-height: 75px;
+    margin-top: 10px;
+    margin: 0;  
+    position: absolute;  
+}
+
+/* FOOTER */
+
+#EGA_footer {
+    background-color: #50697D;
+    margin-top: 10px;  
+    color: white;
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
+
