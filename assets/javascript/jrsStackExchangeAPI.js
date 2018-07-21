@@ -16,7 +16,7 @@ $(document).ready(function() {
         var jrsStackSearchTerm = jrsSearchTerms.join(" ");
         console.log(jrsStackSearchTerm);
 
-        var jrsQueryUrl = "https://api.stackexchange.com/2.2/similar?order=desc&sort=relevance&title=" + jrsStackSearchTerm + "&site=stackoverflow&key=sXqJXycdNOTwFnGKZUSDVw((";
+        var jrsQueryUrl = "https://api.stackexchange.com/2.2/similar?pagesize=5&order=desc&sort=relevance&title=" + jrsStackSearchTerm + "&site=stackoverflow&key=sXqJXycdNOTwFnGKZUSDVw((";
     
         $.ajax({
             url: jrsQueryUrl,
