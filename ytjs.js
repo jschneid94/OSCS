@@ -1,11 +1,18 @@
 // to do
 // add classes to elements and add styles to css doc
-// change rdp to RDP on all classes/ids
 // try and get russian links to stop showing up
 // clean up main vid function
+// need to change video content
+// center text
+// make description above links
+// need to make the search recognize the radio button clicked
+
+// RDP_thumbDesc Click a thumbnail to watch a video
+
+// add class to all results called results
 
 
-$("form").on("click", "#rdp_makeVideo", function (e) {
+$("form").on("click", "#RDP_makeVideo", function (e) {
     e.preventDefault();
 
     var youtubeApiKey = "AIzaSyDZ4WJqvmeaEhTRbGq9uNHPYjUy4pnlsn8";
@@ -16,7 +23,7 @@ $("form").on("click", "#rdp_makeVideo", function (e) {
         part: "snippet",
         key: youtubeApiKey,
         type: "video",
-        q: encodeURIComponent($("#rdp_search").val()).replace(/%20/g, "+"),
+        q: encodeURIComponent($("#RDP_search").val()).replace(/%20/g, "+"),
         maxResults: 5,
         order: "viewCount",
         relevanceLanguage: "en",
@@ -24,7 +31,7 @@ $("form").on("click", "#rdp_makeVideo", function (e) {
         publishedAfter: "2016-01-01T00:00:00Z"
     }
 
-    $('#rdp_smallerVids').empty();
+    $('#RDP_smallerVids').empty();
     loadVids();
 
     function loadVids() {
@@ -38,7 +45,7 @@ $("form").on("click", "#rdp_makeVideo", function (e) {
 
     function mainVid(id) {
 
-        $("#rdp_videosHere").html(`
+        $("#RDP_videosHere").html(`
     <iframe width="560" height="315" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     `)
     };
@@ -46,8 +53,12 @@ $("form").on("click", "#rdp_makeVideo", function (e) {
     function resultsLoop(data) {
 
         for (var i = 1; i < data.items.length; i++) {
+            
             var vid = data.items[i].id.videoId;
-            var newDiv = $("<article class='item' data-key='" + vid + "'>");
+
+            var spacingDiv = $("<div class='col-md-1'>")
+            
+            var newDiv = $("<div class='item' data-key='" + vid + "'>");
             var thumb = $("<a href='https://www.youtube.com/embed/" + vid + "' target ='_blank'><img src='" + data.items[i].snippet.thumbnails.medium.url + "' alt='' class='thumb'></a>");
             var title = $("<h4>" + data.items[i].snippet.title + "</h4>");
             var desc = $("<p>" + data.items[i].snippet.description.substring(0, 100) + "</p>");
@@ -55,7 +66,7 @@ $("form").on("click", "#rdp_makeVideo", function (e) {
             newDiv.append(thumb, title, desc);
 
 
-            $('#rdp_smallerVids').append(newDiv);
+            $('#RDP_smallerVids').append(newDiv);
         }
 
     }

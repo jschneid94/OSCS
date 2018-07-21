@@ -24,17 +24,25 @@
                     <form action="#">
                         <div class="form-group row">
                             <label for="videoSearchInput">Youtube Search</label>
-                            <input class="form-control" id="rdp_search" placeholder="" type="text">
+                            <input class="form-control" id="RDP_search" placeholder="" type="text">
                         </div>
-                        <button class="btn btn-primary float-right" id="rdp_makeVideo" value="Search">Search</button>
+                        <button class="btn btn-primary float-right" id="RDP_makeVideo" value="Search">Search</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
-    <div id="rdp_videosHere"></div>
-    <div id="rdp_smallerVids"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div id="RDP_videosHere" class="col-md-10"></div>
+            <div class="col-md-1"></div>
+        </div>
+        <p id="RDP_thumbDesc"></p>
+        <div class="row">
+            <div id="RDP_smallerVids"></div>
+        </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
