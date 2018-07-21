@@ -4,7 +4,7 @@
 // need to make the search recognize the radio button clicked
 
 // click event that calls youtubeAPI 
-$("form").on("click", "#RDP_makeVideo", function (e) {
+$("form").on("click", "#jrs_submit", function (e) {
     e.preventDefault();
 
     // parameters for actual youtube call
