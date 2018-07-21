@@ -41,6 +41,8 @@ $(document).ready(function() {
                 var jrsNewStackCard = $("<div>");
                 jrsNewStackCard.addClass("card");
 
+                var jrsBr = $("<br />")
+
                 var jrsNewCardContainer = $("<div>")
                 jrsNewCardContainer.addClass("card-body row");
 
@@ -56,7 +58,8 @@ $(document).ready(function() {
 
                         var jrsViewCount = $("<div>");
                         jrsViewCount.addClass("jrsStatText mx-auto my-auto")
-                                    .text("Views <br />" + jrsResult[i].view_count);
+                                    .text("Views ");
+                        jrsViewCount.append("<div>" + jrsResult[i].view_count + "</div>");
                     jrsViewHex.append(jrsViewCount);
 
                     var jrsScoreHex = $("<div>");
@@ -64,10 +67,11 @@ $(document).ready(function() {
 
                         var jrsScoreCount = $("<div>");
                         jrsScoreCount.addClass("jrsStatText mx-auto my-auto")
-                                    .text("Score <br />" + jrsResult[i].score);
+                                    .text("Score ");
+                        jrsScoreCount.append("<div>" + jrsResult[i].score + "</div>");
                     jrsScoreHex.append(jrsScoreCount);
 
-                jrsStatsColumn.append(jrsStackLogo, jrsViewHex, jrsScoreHex);
+                jrsStatsColumn.append(jrsStackLogo, jrsViewHex, jrsBr, jrsScoreHex);
 
                 var jrsStackTitleButton = $("<div>");
                 jrsStackTitleButton.addClass("col-md-9 jrsStackTitleButton");
@@ -77,7 +81,7 @@ $(document).ready(function() {
                                 .text(jrsResult[i].title);
 
                     var jrsStackButton = $("<a>");
-                    jrsStackButton.addClass("btn row mx-auto jrsStackButton")
+                    jrsStackButton.addClass("btn row mx-auto text-light jrsStackButton")
                                 .text("Go to StackOverflow");
                 jrsStackTitleButton.append(jrsStackTitle, jrsStackButton);
 
