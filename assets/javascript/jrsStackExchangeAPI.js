@@ -3,11 +3,11 @@ var jrsSearchTerms = []
 
 $(document).ready(function() {
 
-    $("#jrsSearchButton").on("click", function() {
+    $("#jrs_searchBar").on("click", function() {
         event.preventDefault();
 
         // Grabs the search term and creates an array of each word
-        var jrsUserInput = $("#jrsUserInput").val();
+        var jrsUserInput = $("#jrs_submit").val();
         jrsSearchTerms = jrsUserInput.split(" ");
         
         console.log(jrsSearchTerms);
