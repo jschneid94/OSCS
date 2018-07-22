@@ -21,7 +21,7 @@ $(document).ready(function () {
             // change button to favorited
 
             // thumbnail dimensions: 480w x 360h
-            $("#esh_favorites").append("<img width='100%' src='" + esh_ytthumbnail + "'>", esh_yttitle);
+            $("#EGA_youtubeSubmenu").append("<img width='100%' src='" + esh_ytthumbnail + "'>", esh_yttitle);
 
             // save to local storage
             esh_ytArr.push(esh_ytthumbnail, esh_yttitle);
@@ -38,7 +38,7 @@ $(document).ready(function () {
 
             // change button to favorited
 
-            $("#esh_favorites").append(esh_stackresult);
+            $("#EGA_stackoverflowSubmenu").append(esh_stackresult);
         }
 
 
