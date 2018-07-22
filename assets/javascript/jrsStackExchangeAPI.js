@@ -1,11 +1,18 @@
 // Array to store all the individual search terms
-var jrsSearchTerms = []
+var jrsSearchTerms = [];
+
+function emptyColumn() {
+    $(".EGA_stackoverflowContainer").empty();
+}
 
 $(document).ready(function() {
 
     // When the submit button is pushed...
     $("#jrs_submit").on("click", function() {
         event.preventDefault();
+
+        // Empty the column before pushing results
+        emptyColumn();
 
         // Grabs the search term and creates an array of each word
         var jrsUserInput = $("#jrs_searchBar").val();
