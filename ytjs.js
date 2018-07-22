@@ -45,7 +45,7 @@ $("form").on("click", "#jrs_submit", function (e) {
     function mainVid(data) {
         var id = data.items[0].id.videoId;
 
-        var mainDiv = $("<div class='results' id='RDP_mainDiv'></div>");
+        var mainDiv = $("<div class='results' id='RDP_mainDiv' data-key='" + data.items[0].snippet.thumbnails.high.url + "'></div>");
 
         var vidDiv = $("<iframe class='RDP_iframeSize' src='https://www.youtube.com/embed/" + id + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 
@@ -69,7 +69,7 @@ $("form").on("click", "#jrs_submit", function (e) {
 
             var vid = data.items[i].id.videoId;
 
-            var newDiv = $("<div class='RDP_item' data-key='" + vid + "'></div>");
+            var newDiv = $("<div class='RDP_item' data-key='" + data.items[i].snippet.thumbnails.high.url + "'></div>");
             var thumb = $("<a href='https://www.youtube.com/embed/" + vid + "' target ='_blank'><img src='" + data.items[i].snippet.thumbnails.high.url + "' alt='' class='RDP_thumb'></a>");
 
             var title = $("<p class='RDP_title'>" + data.items[i].snippet.title + "</p>");
