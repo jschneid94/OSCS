@@ -1,10 +1,12 @@
 // Array to store all the individual search terms
 var jrsSearchTerms = [];
 
+// Funtion to empty the Stack Overlfow column
 function emptyColumn() {
     $(".EGA_stackoverflowContainer").empty();
 }
 
+// Function to check if the search results bar has any input in it
 function checkInput() {
     
     if ($("#jrs_searchBar").val() === "") {
@@ -21,6 +23,7 @@ function buttonChecked() {
     if(radio[0].checked) {
         var val = radio[0].value;
         console.log(val);
+        return val;
     }
     else if(radio[1].checked) {
         var val = radio[1].value;
@@ -42,15 +45,19 @@ function buttonChecked() {
         var val = radio[5].value;
         console.log(val)
     }
+
+    jrsSearchTerms.push(val);
 }
 
 $(document).ready(function() {
 
-    buttonChecked();
-
     // When the submit button is pushed...
     $("#jrs_submit").on("click", function() {
+
         event.preventDefault();
+
+        // Checks which radio button is pushed and adds to the search term
+        buttonChecked();
 
         // Empty the column before pushing results
         emptyColumn();
