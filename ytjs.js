@@ -49,12 +49,17 @@ $("form").on("click", "#jrs_submit", function (e) {
 
         var vidDiv = $("<iframe class='RDP_iframeSize' src='https://www.youtube.com/embed/" + id + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 
+        var titleDiv = $("<div class='row RDP_bold' id='RDP_titleDiv' data-key='" + data.items[0].snippet.title + "'></div>")
+       
+        var title = $("<p class='RDP_title col-md-12'>" + data.items[0].snippet.title + "</p>");
+
         var descDiv = $("<div class='row'></div>");
         var desc = $("<p class='RDP_wordBreak col-md-10'>" + data.items[0].snippet.description + "</p>");
         var button = $("<div class='col-md-2'><button type='button' class='btn btn-light favorite'><i class='fas fa-star'></i> Favorite</button></div>");
 
         descDiv.append(desc, button);
-        mainDiv.append(vidDiv, descDiv);
+        titleDiv.append(title);
+        mainDiv.append(vidDiv, titleDiv, descDiv);
 
         $("#RDP_videosHere").html(mainDiv);
 
