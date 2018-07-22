@@ -85,11 +85,13 @@ $(document).ready(function () {
 
         // function that acutally calls youtubeAPI
         function loadVids() {
+            
             $.getJSON(queryURL, options, function (data) {
                 console.log(data, "data");
                 mainVid(data);
                 resultsLoop(data);
             });
+            
         };
 
         // function making the larger video on screen and formatting it
