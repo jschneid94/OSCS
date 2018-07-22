@@ -1,4 +1,5 @@
 // to do
+
 // try and get russian links to stop showing up
 
 // need to make the search recognize the radio button clicked
@@ -21,7 +22,7 @@ $("form").on("click", "#jrs_submit", function (e) {
         order: "viewCount",
         relevanceLanguage: "en",
         regionCode: "US",
-        publishedAfter: "2016-01-01T00:00:00Z"
+        publishedAfter: "2017-01-01T00:00:00Z"
     };
 
     // empties small div so it doesn't keep appending
