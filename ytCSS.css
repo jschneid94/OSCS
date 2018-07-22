@@ -28,6 +28,7 @@
 
 .RDP_thumb {
     max-width: 100%;
+    margin: 0;
 }
 
 .RDP_titlediv {
@@ -53,8 +54,4 @@
 
 .RDP_bold {
     font-weight: bolder;
-}
-
-img {
-    margin: 0;
 }
