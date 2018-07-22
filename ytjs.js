@@ -5,6 +5,26 @@
 // need to make the search recognize the radio button clicked
 
 // click event that calls youtubeAPI 
+
+
+
+
+
+function checkInput() {
+    
+    if ($("#jrs_searchBar").val() === "") {
+        //Check to see if there is any text entered
+        // If there is no text within the input ten disable the button
+        return false;
+    };
+    
+};
+
+
+$(document).ready(function () {
+
+
+
 $("form").on("click", "#jrs_submit", function (e) {
     e.preventDefault();
 
@@ -13,11 +33,47 @@ $("form").on("click", "#jrs_submit", function (e) {
 
     var queryURL = "https://www.googleapis.com/youtube/v3/search";
 
+    function buttonChecked() {
+        var radio = document.getElementsByName("radio");
+        if(radio[0].checked) {
+            var val = radio[0].value;
+            return val;
+            console.log(val)
+        }
+        else if(radio[1].checked) {
+            var val = radio[1].value;
+            return val;
+            console.log(val)
+        }
+        else if(radio[2].checked) {
+            var val = radio[2].value;
+            return val;
+            console.log(val)
+        }
+        else if(radio[3].checked) {
+            var val = radio[3].value;
+            return val;
+            console.log(val)
+        }
+        else if(radio[4].checked) {
+            var val = radio[4].value;
+            return val;
+            console.log(val)
+        }
+        else if(radio[5].checked) {
+            var val = radio[5].value;
+            return val;
+            console.log(val)
+        }
+    }
+
+    var q = buttonChecked() + " " + ($("#jrs_searchBar").val()).replace(/%20/g, "+");
+
     var options = {
         part: "snippet",
         key: youtubeApiKey,
         type: "video",
-        q: encodeURIComponent($("#jrs_searchBar").val()).replace(/%20/g, "+"),
+        q: q,
         maxResults: 5,
         order: "viewCount",
         relevanceLanguage: "en",
@@ -27,6 +83,8 @@ $("form").on("click", "#jrs_submit", function (e) {
 
     // empties small div so it doesn't keep appending
     $('#RDP_smallerVids').empty();
+
+    checkInput();
 
     // call load div function
     loadVids();
@@ -93,5 +151,7 @@ $("form").on("click", "#jrs_submit", function (e) {
         };
 
     };
+
+});
 
 });
