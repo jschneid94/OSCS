@@ -28,9 +28,23 @@ img {
     filter : drop-shadow(0 5px 5px rgba(255, 255, 255, 0.438));
 }
 
+.EGA_activeToggle {
+    border-radius: 50%;
+    box-shadow:
+        inset 0 0 50px #fff,      /* inner white */
+        inset 20px 0 20px #D9CFE7,   /* inner left magenta short */
+        inset -20px 0 20px #0ff,  /* inner right cyan short */
+        inset 20px 0 60px #D9CFE7,  /* inner left magenta broad */
+        inset -20px 0 60px #0ff, /* inner right cyan broad */
+        0 0 50px #fff,            /* outer white */
+        -10px 0 40px #D9CFE7,        /* outer left magenta */
+        10px 0 40px #0ff;         /* outer right cyan */
+}
+
 .EGA_apiRow {
     background: #A8BCBA;
     width: 100%;
+    padding-top: 40px;
     
 }
 
@@ -283,6 +297,18 @@ a:focus {
     background: #6d7fcc;
 }
 
+#EGA_sidebarCollapse {
+    background-color: rgb(86, 133, 148);
+    border-color: rgb(86, 133, 148);
+}
+#EGA_spanFavorites {
+    margin-left: 10px;
+}
+
+#EGA_sidebarCollapse:hover {
+    background-color: #324856;
+    border-color: #324856;
+}
 #sidebar ul.components {
     padding: 20px 0;
     border-bottom: 1px solid #47748b;
