@@ -1,4 +1,5 @@
 // to do
+
 // try and get russian links to stop showing up
 
 // need to make the search recognize the radio button clicked
@@ -10,7 +11,7 @@ $("form").on("click", "#jrs_submit", function (e) {
     // parameters for actual youtube call
     var youtubeApiKey = "AIzaSyDZ4WJqvmeaEhTRbGq9uNHPYjUy4pnlsn8";
 
-    var queryURL = "https://www.googleapis.com/youtube/v3/search"
+    var queryURL = "https://www.googleapis.com/youtube/v3/search";
 
     var options = {
         part: "snippet",
@@ -21,8 +22,8 @@ $("form").on("click", "#jrs_submit", function (e) {
         order: "viewCount",
         relevanceLanguage: "en",
         regionCode: "US",
-        publishedAfter: "2016-01-01T00:00:00Z"
-    }
+        publishedAfter: "2017-01-01T00:00:00Z"
+    };
 
     // empties small div so it doesn't keep appending
     $('#RDP_smallerVids').empty();
@@ -37,8 +38,8 @@ $("form").on("click", "#jrs_submit", function (e) {
             var id = data.items[0].id.videoId;
             mainVid(data);
             resultsLoop(data);
-        })
-    }
+        });
+    };
 
     // function making the larger video on screen and formatting it
     function mainVid(data) {
@@ -73,15 +74,15 @@ $("form").on("click", "#jrs_submit", function (e) {
 
             var title = $("<p class='RDP_title'>" + data.items[i].snippet.title + "</p>");
 
-            var titleDiv = $("<div class='RDP_titlediv'></div>")
+            var titleDiv = $("<div class='RDP_titlediv'></div>");
 
             titleDiv.append(title);
 
             newDiv.append(thumb, titleDiv);
 
             $('#RDP_smallerVids').append(newDiv);
-        }
+        };
 
-    }
+    };
 
 });
