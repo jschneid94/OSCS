@@ -51,7 +51,7 @@ $("form").on("click", "#jrs_submit", function (e) {
 
         var descDiv = $("<div class='row'></div>");
         var desc = $("<p class='RDP_wordBreak col-md-10'>" + data.items[0].snippet.description + "</p>");
-        var button = $("<div class='col-md-2'><button type='button' class='btn btn-light favorite'><i class='fas fa-star'></i>Favorite</button></div>");
+        var button = $("<div class='col-md-2'><button type='button' class='btn btn-light favorite'><i class='fas fa-star'></i> Favorite</button></div>");
 
         descDiv.append(desc, button);
         mainDiv.append(vidDiv, descDiv);

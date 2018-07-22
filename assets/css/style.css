@@ -418,3 +418,13 @@ a.article:hover {
 .card-body {
     padding: 0.8rem;
 }
+
+/* FAVORITE ICON STYLING */
+.fa-star {
+    color: #ffea00;
+}
+
+.favorite {
+    background-color: #D3D3D3;
+    border: none;
+}
