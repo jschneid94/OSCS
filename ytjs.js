@@ -1,6 +1,6 @@
 // to do
 
-// try and get russian links to stop showing up
+// try and get other languages links to stop showing up
 
 // need to make the search recognize the radio button clicked
 
@@ -35,7 +35,6 @@ $("form").on("click", "#jrs_submit", function (e) {
     function loadVids() {
         $.getJSON(queryURL, options, function (data) {
             console.log(data, "data");
-            var id = data.items[0].id.videoId;
             mainVid(data);
             resultsLoop(data);
         });
@@ -54,11 +53,15 @@ $("form").on("click", "#jrs_submit", function (e) {
         var title = $("<p class='RDP_title col-md-12'>" + data.items[0].snippet.title + "</p>");
 
         var descDiv = $("<div class='row'></div>");
+        
         var desc = $("<p class='RDP_wordBreak col-md-10'>" + data.items[0].snippet.description + "</p>");
+        
         var button = $("<div class='col-md-2'><button type='button' class='btn btn-light favorite'><i class='fas fa-star'></i> Favorite</button></div>");
 
         descDiv.append(desc, button);
+        
         titleDiv.append(title);
+        
         mainDiv.append(vidDiv, titleDiv, descDiv);
 
         $("#RDP_videosHere").html(mainDiv);
@@ -75,11 +78,12 @@ $("form").on("click", "#jrs_submit", function (e) {
             var vid = data.items[i].id.videoId;
 
             var newDiv = $("<div class='RDP_item' data-key='" + data.items[i].snippet.thumbnails.high.url + "'></div>");
+            
             var thumb = $("<a href='https://www.youtube.com/embed/" + vid + "' target ='_blank'><img src='" + data.items[i].snippet.thumbnails.high.url + "' alt='' class='RDP_thumb'></a>");
 
-            var title = $("<p class='RDP_title'>" + data.items[i].snippet.title + "</p>");
+            var titleDiv = $("<div class='RDP_titlediv' data-key='" + data.items[0].snippet.title + "'></div>");
 
-            var titleDiv = $("<div class='RDP_titlediv'></div>");
+            var title = $("<p class='RDP_title'>" + data.items[i].snippet.title + "</p>");
 
             titleDiv.append(title);
 
