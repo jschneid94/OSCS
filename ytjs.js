@@ -14,38 +14,46 @@ function checkInput() {
 
 // function for grabbing value of whatever button is clicked
 function buttonChecked() {
+
     var radio = document.getElementsByName("radio");
+
     if (radio[0].checked) {
         var val = radio[0].value;
         return val;
         console.log(val)
-    }
+    };
+
     else if (radio[1].checked) {
         var val = radio[1].value;
         return val;
         console.log(val)
-    }
+    };
+
     else if (radio[2].checked) {
         var val = radio[2].value;
         return val;
         console.log(val)
-    }
+    };
+
     else if (radio[3].checked) {
         var val = radio[3].value;
         return val;
         console.log(val)
-    }
+    };
+
     else if (radio[4].checked) {
         var val = radio[4].value;
         return val;
         console.log(val)
-    }
+    };
+
     else if (radio[5].checked) {
         var val = radio[5].value;
         return val;
         console.log(val)
-    }
-}
+    };
+    
+};
 
 $(document).ready(function () {
 
