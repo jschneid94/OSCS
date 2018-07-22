@@ -5,6 +5,16 @@ function emptyColumn() {
     $(".EGA_stackoverflowContainer").empty();
 }
 
+function checkInput() {
+    
+    if ($("#jrs_searchBar").val() === "") {
+        //Check to see if there is any text entered
+        // If there is no text within the input ten disable the button
+        return false;
+    }
+    
+}
+
 $(document).ready(function() {
 
     // When the submit button is pushed...
@@ -13,6 +23,9 @@ $(document).ready(function() {
 
         // Empty the column before pushing results
         emptyColumn();
+
+        // Check if user has typed anything in the search bar
+        checkInput();   
 
         // Grabs the search term and creates an array of each word
         var jrsUserInput = $("#jrs_searchBar").val();
