@@ -34,9 +34,9 @@ $(document).ready(function() {
             url: jrsQueryUrl,
             method: "GET"
         }).then(function(response) {
-            
-            var jrsResult = response.items;
 
+            var jrsResult = response.items;
+ 
             // For loop will generate a new div for each result returned by the query
             for (var i = 0; i < jrsResult.length; i++) {
 

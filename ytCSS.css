@@ -1,0 +1,57 @@
+
+.RDP_title {
+    font-size: 16px;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+#RDP_thumbDesc {
+    text-align: center;
+    word-wrap: break-word;
+    padding-top: 15px;
+}
+
+.RDP_wordBreak {
+    word-wrap: break-word;
+    text-align: center;
+}
+
+#RDP_mainDiv {
+    width: 100%;
+    height: 100%;
+    padding-top: 22px;
+}
+
+.overflow{
+    overflow: auto;
+}
+
+.RDP_thumb {
+    max-width: 100%;
+}
+
+.RDP_titlediv {
+    max-width: 100%;
+}
+
+.RDP_iframeSize {
+    width: 100%;
+    height: 46vh;
+}
+
+.RDP_flexBox {
+    /* max-width: 50%; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0px;
+}
+
+.RDP_item {
+    max-width: 45%;
+}
+
+img {
+    margin: 0;
+}
