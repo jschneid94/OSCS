@@ -18,8 +18,6 @@ $(document).ready(function () {
             var esh_ytthumbnail = $("#RDP_mainDiv").attr("data-key");
             var esh_yttitle = $(".RDP_titlediv").attr("data-key");
 
-            // ** TODO: change button to favorited
-
             // thumbnail dimensions: 480w x 360h
             $("#EGA_youtubeSubmenu").append("<img width='100%' src='" + esh_ytthumbnail + "'>", esh_yttitle);
 
@@ -39,13 +37,14 @@ $(document).ready(function () {
             localStorage.setItem("stackFav-" + esh_stackcounter, JSON.stringify(esh_stackArr));
             esh_stackcounter++;
 
-            // ** TODO: modal to alert user it was favorited successfully
-
-            // ** TODO: change button to favorited
-
             // DONE: clone and append
             $("#EGA_stackoverflowSubmenu").append(esh_stackresult.clone());
         }
+
+        // ** TODO: modal to alert user it was favorited successfully
+
+        // ** TODO: change button to favorited
+        
 
     });
 
