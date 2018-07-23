@@ -11,12 +11,11 @@
 
 /* API IMAGE SECTION */
 
-img {
-    margin: 30px -40px;
-}
+
 .EGA_apiImg {
     transition: transform .2s;
     transition: 0.2s;
+    margin: 30px -40px;
 }
 .EGA_apiImg:hover {
     transform: scale(1.05);
@@ -313,6 +312,16 @@ a:focus {
     border-color: rgb(86, 133, 148);
 }
 
+#EGA_youtubeSubmenu {
+    padding: 10px;
+}
+#EGA_stackoverflowSubmenu {
+    padding: 10px;
+}
+#EGA_githubSubmenu {
+    padding: 10px;
+}
+
 #mCSB_1 {
     overflow-y: auto;
 }
@@ -329,7 +338,6 @@ a:focus {
 }
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
 }
 
 #sidebar ul p {
@@ -355,9 +363,15 @@ a[aria-expanded="true"] {
 }
 
 a[data-toggle="collapse"] {
-    position: relative;
+    position: relative; 
 }
 
+.mCSB_container {
+    top: 0;
+}
+#mCSB_1_container {
+    top: 0;
+}
 
 .dropdown-toggle::after {
     display: block;
