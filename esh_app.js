@@ -19,9 +19,11 @@ $(document).ready(function () {
             var esh_yttitle = $(".RDP_titlediv").attr("data-key");
 
             // thumbnail dimensions: 480w x 360h
-            $("#EGA_youtubeSubmenu").append("<img width='100%' src='" + esh_ytthumbnail + "'>", esh_yttitle);
+            // ** TODO: add youtube link to youtube favorite
+            $("#EGA_youtubeSubmenu").append("<a href='" +  + "'><img width='100%' src='" + esh_ytthumbnail + "'></a>", esh_yttitle);
 
-            // save to local storage
+            // save to local storage as an array
+            // ** TODO: add youtube link
             esh_ytArr.push(esh_ytthumbnail, esh_yttitle);
             localStorage.setItem("ytFav-" + esh_ytcounter, esh_ytArr);
             esh_ytcounter++;
@@ -32,7 +34,7 @@ $(document).ready(function () {
             // ** TODO: get new class name from jordy
             var esh_stackresult = $(this).parent().find(".card-body");
 
-            // stack exchange - set and retrieve data name and url to save to local storage
+            // stack exchange - set to local storage as an array
             esh_stackArr.push($(".card-title").attr("data-title"), $(".card-title").attr("data-link"));
             localStorage.setItem("stackFav-" + esh_stackcounter, JSON.stringify(esh_stackArr));
             esh_stackcounter++;
@@ -41,10 +43,9 @@ $(document).ready(function () {
             $("#EGA_stackoverflowSubmenu").append(esh_stackresult.clone());
         }
 
-        // ** TODO: modal to alert user it was favorited successfully
-
-        // ** TODO: change button to favorited
-        
+        // DONE: change button to favorited
+        $(this).css("background-color", "#696969");
+        $(this).html("<i class='fas fa-star'></i> Favorited");       
 
     });
 

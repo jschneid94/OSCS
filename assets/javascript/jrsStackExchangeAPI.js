@@ -162,7 +162,7 @@ $(document).ready(function() {
                 
                 jrsNewCardContainer.append(jrsStatsColumn, jrsStackTitleButton);
 
-                var esh_button = $("<button type='button' class='btn btn-light favorite'><i class='fas fa-star'></i> Favorite</button>");
+                var esh_button = $("<button type='button' class='btn btn-light favorite' data-toggle='modal' data-target='#favModal'><i class='fas fa-star'></i> Favorite</button>");
 
                 jrsNewStackCard.append(jrsNewCardContainer, esh_button);
 
