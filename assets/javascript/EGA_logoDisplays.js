@@ -9,6 +9,7 @@ $("#EGA_githubApiLogo").on('click', function () {
     setTimeout(function(){
       $("#EGA_githubLogo").fadeToggle(500)}, 500); 
       $(this).toggleClass('EGA_activeToggle'); 
+      $("#EGA_githubContainer").fadeToggle(500);
 
   } else {
     $("#EGA_githubLogo").fadeToggle(500);
@@ -23,8 +24,8 @@ $("#EGA_githubApiLogo").on('click', function () {
 $("#EGA_youtubeApiLogo").on('click', function () {
   
   $("#EGA_youtubeLogo").fadeToggle();
-
   $(this).toggleClass('EGA_activeToggle'); 
+  
 
 });
 
