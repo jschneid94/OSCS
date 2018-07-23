@@ -21,38 +21,38 @@ function buttonChecked() {
         var val = radio[0].value;
         return val;
         console.log(val)
-    };
+    }
 
     else if (radio[1].checked) {
         var val = radio[1].value;
         return val;
         console.log(val)
-    };
+    }
 
     else if (radio[2].checked) {
         var val = radio[2].value;
         return val;
         console.log(val)
-    };
+    }
 
     else if (radio[3].checked) {
         var val = radio[3].value;
         return val;
         console.log(val)
-    };
+    }
 
     else if (radio[4].checked) {
         var val = radio[4].value;
         return val;
         console.log(val)
-    };
+    }
 
     else if (radio[5].checked) {
         var val = radio[5].value;
         return val;
         console.log(val)
-    };
-    
+    }
+
 };
 
 $(document).ready(function () {
@@ -116,11 +116,13 @@ $(document).ready(function () {
 
             var descDiv = $("<div class='row'></div>");
 
-            var desc = $("<p class='RDP_wordBreak col-md-10'>" + data.items[0].snippet.description + "</p>");
+            var spacerDiv = $("<div class='col-md-1'></div>");
+
+            var desc = $("<p class='RDP_wordBreak col-md-8'>" + data.items[0].snippet.description + "</p>");
 
             var button = $("<div class='col-md-2'><button type='button' class='btn btn-light favorite'><i class='fas fa-star'></i> Favorite</button></div>");
 
-            descDiv.append(desc, button);
+            descDiv.append(spacerDiv, desc, button);
 
             titleDiv.append(title);
 
