@@ -152,6 +152,10 @@ input[type=checkbox] {
 }
 
 .EGA_youTubeColumns {
+    display: hidden;
+}
+
+.EGA_youTubeColumns {
     background: #50697D;
     width: 100%;
     min-height: 400px;
