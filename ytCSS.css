@@ -16,6 +16,11 @@
     text-align: center;
 }
 
+.RDP_container {
+    width: 90%;
+    margin: auto;
+}
+
 #RDP_mainDiv {
     width: 100%;
     height: 100%;

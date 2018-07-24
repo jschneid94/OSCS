@@ -106,7 +106,7 @@ $(document).ready(function () {
         function mainVid(data) {
             var id = data.items[0].id.videoId;
 
-            var mainDiv = $("<div class='results' id='RDP_mainDiv' data-key='" + data.items[0].snippet.thumbnails.high.url + "'></div>");
+            var mainDiv = $("<div class='results' id='RDP_mainDiv' data-key='" + data.items[0].snippet.thumbnails.high.url + " data-url='https://www.youtube.com/watch?v=" + id + "'></div>");
 
             var vidDiv = $("<iframe class='RDP_iframeSize' src='https://www.youtube.com/embed/" + id + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 
@@ -116,13 +116,11 @@ $(document).ready(function () {
 
             var descDiv = $("<div class='row'></div>");
 
-            var spacerDiv = $("<div class='col-md-1'></div>");
-
             var desc = $("<p class='RDP_wordBreak col-md-8'>" + data.items[0].snippet.description + "</p>");
 
             var button = $("<div class='col-md-2'><button type='button' class='btn btn-light favorite' data-toggle='modal' data-target='#favModal'><i class='fas fa-star'></i> Favorite</button></div>");
 
-            descDiv.append(spacerDiv, desc, button);
+            descDiv.append(desc, button);
 
             titleDiv.append(title);
 
