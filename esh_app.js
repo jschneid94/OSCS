@@ -17,7 +17,7 @@ $(document).ready(function () {
         // youtube - save url and embed thumbnail into favorites section
         if ($(this).parents("#RDP_videosHere").length > 0) {
             var esh_ytthumbnail = $("#RDP_mainDiv").attr("data-key");
-            var esh_yttitle = $(".RDP_titlediv").attr("data-key");
+            var esh_yttitle = $("#RDP_titleDiv").attr("data-key");
             var esh_yturl = $("#RDP_mainDiv").attr("data-url");
 
             // thumbnail dimensions: 480w x 360h
@@ -58,12 +58,15 @@ $(document).ready(function () {
         // DONE: on click, change favorited button to favorite
         $(this).removeClass("favorited").addClass("favorite").html("<i class='fas fa-star'></i> Favorite").attr("data-target", "#favModal");
 
-        // ** TODO: remove chosen YOUTUBE result from sidebar
-        // if (this) main yt vid data-url matches any favorited yt video url on .favorited btn click, remove favorite div from sidebar
-        // if ($(this).closest(".results").attr("data-url") === $("#EGA_youtubeSubmenu").find(".esh_ytfav").attr("href")) {
-        //     console.log("original link " + $(this).closest(".results").attr("data-url"));
-        //     console.log("is this the right link? " + $("#EGA_youtubeSubmenu").find(".esh_ytfav").attr("href"));
-        // }
+        // DONEZO: remove chosen YOUTUBE result from sidebar
+        // if main yt vid data-url matches any favorited yt video url on .favorited btn click, remove favorite div from sidebar
+        $(".esh_ytfav").each(function() {
+            var esh_ytunfave = $(this).find("a").attr("href");
+            if ($(".results").attr("data-url") === esh_ytunfave) {
+                // OMGIDIDIT: point to yt fav div when it matches to remove
+                $(this).remove();
+            }
+        });
 
         // ** TODO: remove chosen STACK result from sidebar
     });
