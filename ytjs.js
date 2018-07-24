@@ -106,7 +106,7 @@ $(document).ready(function () {
         function mainVid(data) {
             var id = data.items[0].id.videoId;
 
-            var mainDiv = $("<div class='results' id='RDP_mainDiv' data-key='" + data.items[0].snippet.thumbnails.high.url + " data-url='https://www.youtube.com/watch?v=" + id + "'></div>");
+            var mainDiv = $("<div class='results' id='RDP_mainDiv' data-key='" + data.items[0].snippet.thumbnails.high.url + "' data-url='https://www.youtube.com/watch?v=" + id + "'></div>");
 
             var vidDiv = $("<iframe class='RDP_iframeSize' src='https://www.youtube.com/embed/" + id + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 
