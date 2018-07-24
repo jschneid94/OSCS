@@ -93,17 +93,18 @@ $(document).ready(function () {
 
         // function that acutally calls youtubeAPI
         function loadVids() {
-            
+
             $.getJSON(queryURL, options, function (data) {
                 console.log(data, "data");
                 mainVid(data);
                 resultsLoop(data);
             });
-            
+
         };
 
         // function making the larger video on screen and formatting it
         function mainVid(data) {
+
             var id = data.items[0].id.videoId;
 
             var mainDiv = $("<div class='results' id='RDP_mainDiv' data-key='" + data.items[0].snippet.thumbnails.high.url + "' data-url='https://www.youtube.com/watch?v=" + id + "'></div>");
@@ -141,9 +142,9 @@ $(document).ready(function () {
 
                 var newDiv = $("<div class='RDP_item' data-key='" + data.items[i].snippet.thumbnails.high.url + "'></div>");
 
-                var thumb = $("<a href='https://www.youtube.com/embed/" + vid + "' target ='_blank'><img src='" + data.items[i].snippet.thumbnails.high.url + "' alt='' class='RDP_thumb'></a>");
+                var thumb = $("<img src='" + data.items[i].snippet.thumbnails.high.url + "' alt='' class='RDP_thumb' data-embed='https://www.youtube.com/embed/" + vid + "' data-url='https://www.youtube.com/watch?v=" + vid + "' data-title='" + data.items[i].snippet.title + "' data-desc='" + data.items[i].snippet.description + "' data-thumb='" + data.items[i].snippet.thumbnails.high.url + "'>");
 
-                var titleDiv = $("<div class='RDP_titlediv' data-key='" + data.items[0].snippet.title + "'></div>");
+                var titleDiv = $("<div class='RDP_titlediv' data-key='" + data.items[i].snippet.title + "'></div>");
 
                 var title = $("<p class='RDP_title'>" + data.items[i].snippet.title + "</p>");
 
@@ -152,7 +153,70 @@ $(document).ready(function () {
                 newDiv.append(thumb, titleDiv);
 
                 $('#RDP_smallerVids').append(newDiv);
+
             };
+
+            // on click to replace main vid embedded with one of the thumbnails
+            $(".RDP_thumb").on("click", function () {
+
+                var embed = $(this).attr("data-embed");
+
+                var url = $(this).attr("data-url");
+
+                var desc = $(this).attr("data-desc");
+
+                var title = $(this).attr("data-title");
+
+                var thumb = $(this).attr("data-thumb");
+
+                var mainDiv = $("<div class='results' id='RDP_mainDiv' data-key='" + thumb + "' data-url='" + url + "'></div>");
+
+                var vidDiv = $("<iframe class='RDP_iframeSize' src='" + embed + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+
+                var titleDiv = $("<div class='row RDP_bold' id='RDP_titleDiv' data-key='" + title + "'></div>")
+
+                var title = $("<p class='RDP_title col-md-12'>" + title + "</p>");
+
+                var descDiv = $("<div class='row'></div>");
+
+                var desc = $("<p class='RDP_wordBreak col-md-8'>" + desc + "</p>");
+
+                var button = $("<div class='col-md-2'><button type='button' class='btn btn-light favorite' data-toggle='modal' data-target='#favModal'><i class='fas fa-star'></i> Favorite</button></div>");
+
+                descDiv.append(desc, button);
+
+                titleDiv.append(title);
+
+                mainDiv.append(vidDiv, titleDiv, descDiv);
+
+                $("#RDP_videosHere").html(mainDiv);
+
+                $(".RDP_empty").empty();
+
+                addMainVid();
+
+                function addMainVid() {
+
+                    var id = data.items[0].id.videoId;
+
+                    var desc = data.items[0].snippet.description
+
+                    var newDiv = $("<div class='RDP_item RDP_empty' data-key='" + data.items[0].snippet.thumbnails.high.url + "'></div>");
+
+                    var thumb = $('<img src="' + data.items[0].snippet.thumbnails.high.url + '" alt="" class="RDP_thumb" data-embed="https://www.youtube.com/embed/' + id + '" data-url="https://www.youtube.com/watch?v=' + id + '" data-title="' + data.items[0].snippet.title + '" data-desc="' + desc + '" data-thumb="' + data.items[0].snippet.thumbnails.high.url + '">');
+
+                    var titleDiv = $("<div class='RDP_titlediv' data-key='" + data.items[0].snippet.title + "'></div>");
+
+                    var title = $("<p class='RDP_title'>" + data.items[0].snippet.title + "</p>");
+
+                    titleDiv.append(title);
+
+                    newDiv.append(thumb, titleDiv);
+
+                    $('#RDP_smallerVids').prepend(newDiv);
+                }
+
+            });
 
         };
 
