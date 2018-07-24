@@ -44,18 +44,17 @@ $(document).ready(function () {
                 // DONE: clone and append
                 $("#EGA_stackoverflowSubmenu").append(esh_stackresult.clone());
             }
+            esh_favorited = true;
         } else {
-            // *TODO: disable button after click
+            // *TODO: unfavorite
+
         }
 
         // DONE: change button to favorited
-        $(this).css("background-color", "#696969");
-        $(this).html("<i class='fas fa-star'></i> Favorited");
+        $(this).css("background-color", "#87C488");
+        $(this).html("<i class='fas fa-star favorited'></i> Favorited");
 
     });
-
-    // ** TODO: unfavorite an item in sidebar
-
 
     // ** TODO: how to get local storage data to load on site
 
