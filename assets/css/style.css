@@ -156,6 +156,7 @@ input[type=checkbox] {
     width: 100%;
     min-height: 400px;
     justify-content: center;
+    color: white;
 }
 
 
@@ -481,11 +482,22 @@ a.article:hover {
 
 /* FAVORITE ICON STYLING */
 .fa-star {
-    color: #ffea00;
+    color: rgb(255, 230, 88);
 }
 
 .favorite {
-    background-color: #D3D3D3;
+    background-color: rgba(9, 31, 37, 0.863);
+    color: white;
+    border: none;
+}
+.favorite:hover {
+    background-color: rgba(37, 75, 85, 0.863);
+    color: white;
+    border: none;
+}
+.favorite:active {
+    background-color: rgb(52, 201, 33);
+    color: 50697D;
     border: none;
 }
 

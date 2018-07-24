@@ -44,7 +44,7 @@ $(document).ready(function () {
         }
 
         // DONE: change button to favorited
-        $(this).css("background-color", "#696969");
+        $(this).css("background-color", "#87C488");
         $(this).html("<i class='fas fa-star'></i> Favorited");       
 
     });
