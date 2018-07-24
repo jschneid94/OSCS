@@ -93,7 +93,7 @@ $(document).ready(function() {
 
                 // Creates new div for each result
                 var jrsNewStackCard = $("<div>");
-                jrsNewStackCard.addClass("card mb-3 results");
+                jrsNewStackCard.addClass("card mb-3 results container jrsContainer");
 
                 // Break variable for separating hexagons
                 var jrsBr = $("<br />")

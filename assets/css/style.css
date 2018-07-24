@@ -465,6 +465,11 @@ a.article:hover {
     padding: 0.8rem;
 }
 
+.jrsContainer {
+    width: 100%;
+    margin: auto;
+}
+
 /* FAVORITE ICON STYLING */
 .fa-star {
     color: #ffea00;
