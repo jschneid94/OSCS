@@ -191,6 +191,31 @@ $(document).ready(function () {
 
                 $("#RDP_videosHere").html(mainDiv);
 
+                $(".RDP_empty").empty();
+
+                addMainVid();
+
+                function addMainVid() {
+
+                    var id = data.items[0].id.videoId;
+
+                    var desc = data.items[0].snippet.description
+
+                    var newDiv = $("<div class='RDP_item RDP_empty' data-key='" + data.items[0].snippet.thumbnails.high.url + "'></div>");
+
+                    var thumb = $('<img src="' + data.items[0].snippet.thumbnails.high.url + '" alt="" class="RDP_thumb" data-embed="https://www.youtube.com/embed/' + id + '" data-url="https://www.youtube.com/watch?v=' + id + '" data-title="' + data.items[0].snippet.title + '" data-desc="' + desc + '" data-thumb="' + data.items[0].snippet.thumbnails.high.url + '">');
+
+                    var titleDiv = $("<div class='RDP_titlediv' data-key='" + data.items[0].snippet.title + "'></div>");
+
+                    var title = $("<p class='RDP_title'>" + data.items[0].snippet.title + "</p>");
+
+                    titleDiv.append(title);
+
+                    newDiv.append(thumb, titleDiv);
+
+                    $('#RDP_smallerVids').prepend(newDiv);
+                }
+
             });
 
         };
