@@ -1,23 +1,25 @@
 
 .RDP_title {
-    font-size: 20px;
+    font-size: 1em; /* EGA - changed this from 20px to 1em */
     word-wrap: break-word;
-    text-align: center;
+    text-align: left; /* EGA - changed this from center to left */
+    margin-top: 10px; /* EGA - added this line entirely */
 }
 
 #RDP_thumbDesc {
     text-align: center;
     word-wrap: break-word;
-    padding-top: 15px;
+    padding: 30px; /* EGA - changed this from padding-top: 15px;  */
 }
 
 .RDP_wordBreak {
     word-wrap: break-word;
-    text-align: center;
+    text-align: justify; /* EGA - changed this from center to justify */
+    margin-right: 10%
 }
 
 .RDP_container {
-    width: 90%;
+    width: 95%;
     margin: auto;
 }
 

@@ -152,6 +152,10 @@ input[type=checkbox] {
 }
 
 .EGA_youTubeColumns {
+    display: hidden;
+}
+
+.EGA_youTubeColumns {
     background: #50697D;
     width: 100%;
     min-height: 400px;
@@ -511,6 +515,10 @@ a.article:hover {
     background-color: rgb(52, 201, 33);
     color: 50697D;
     border: none;
+}
+
+.favorited {
+    background-color: #87c488;
 }
 
 /* MEDIA QUERIES */
