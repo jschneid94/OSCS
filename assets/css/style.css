@@ -506,6 +506,7 @@ a.article:hover {
     background-color: rgba(9, 31, 37, 0.863);
     color: white;
     border: none;
+    margin: 20px;
 }
 .favorite:hover {
     background-color: rgba(37, 75, 85, 0.863);
@@ -517,6 +518,10 @@ a.article:hover {
     color: 50697D;
     border: none;
 }
+.jrsRow {
+    justify-content: center;
+}
+
 
 .favorited {
     background-color: #87c488;
