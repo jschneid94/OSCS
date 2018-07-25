@@ -56,6 +56,22 @@ function buttonChecked() {
 
 };
 
+
+
+// $(".RDP_radioBtn").on("click", function (){
+//     $("#jrs_searchBar").removeAttribute("readonly");
+// });
+
+// function workingSearchBar () {
+//     var radio = document.getElementsByName("radio");
+//     if (radio == "active") {
+//     $("#jrs_searchBar").removeAttr("readonly");
+// }
+// }
+
+//     workingSearchBar();
+
+
 $(document).ready(function () {
 
     // click event that calls youtubeAPI 
