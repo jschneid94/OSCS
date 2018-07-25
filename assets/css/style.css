@@ -151,9 +151,6 @@ input[type=checkbox] {
     
 }
 
-.EGA_youTubeColumns {
-    display: hidden;
-}
 
 .EGA_youTubeColumns {
     background: #50697D;
@@ -161,6 +158,8 @@ input[type=checkbox] {
     min-height: 400px;
     justify-content: center;
     color: white;
+    padding: 0px;
+    display: hidden;
 }
 
 
@@ -506,7 +505,7 @@ a.article:hover {
     background-color: rgba(9, 31, 37, 0.863);
     color: white;
     border: none;
-    margin: 20px;
+    text-align: right;
 }
 .favorite:hover {
     background-color: rgba(37, 75, 85, 0.863);
@@ -521,10 +520,13 @@ a.article:hover {
 .jrsRow {
     justify-content: center;
 }
-
+.jrsRow > .favorite { /*EGA - Added this row to space the vaforite button specific to the stack column */
+    margin: 20px;
+}
 
 .favorited {
     background-color: #87c488;
+    text-align: right;
 }
 
 /* MEDIA QUERIES */

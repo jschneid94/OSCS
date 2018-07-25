@@ -111,17 +111,17 @@ $(document).ready(function () {
 
             var vidDiv = $("<iframe class='RDP_iframeSize col-md-12' src='https://www.youtube.com/embed/" + id + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 
-            var row = $("<div class='row'></div>");
+            var row = $("<div class='row RDP_row'></div>");
 
             var titleDiv = $("<div class='col-md-12 RDP_bold' id='RDP_titleDiv' data-key='" + data.items[0].snippet.title + "'></div>");
 
             var title = $("<p class='RDP_title col-md-12'>" + data.items[0].snippet.title + "</p>");
 
-            var descDiv = $("<div class='row'></div>");
+            var descDiv = $("<div class='row RDP_row'></div>");
 
             var desc = $("<p class='RDP_wordBreak col-md-8'>" + data.items[0].snippet.description + "</p>");
 
-            var button = $("<div class='col-md-2'><button type='button' class='btn btn-light favorite' data-toggle='modal' data-target='#favModal'><i class='fas fa-star'></i> Favorite</button></div>");
+            var button = $("<div class='col-md-4'><button type='button' class='btn btn-light favorite' data-toggle='modal' data-target='#favModal'><i class='fas fa-star'></i> Favorite</button></div>");
 
             descDiv.append(desc, button);
 

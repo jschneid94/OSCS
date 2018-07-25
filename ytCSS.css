@@ -15,12 +15,16 @@
 .RDP_wordBreak {
     word-wrap: break-word;
     text-align: justify; /* EGA - changed this from center to justify */
-    margin-right: 10%
 }
 
 .RDP_container {
-    width: 95%;
+    width: 100%;
     margin: auto;
+}
+
+.RDP_row { /* EGA - Added this class so as to not affect the row class. */
+    text-align: center;
+    padding: 20px;
 }
 
 #RDP_mainDiv {
@@ -45,6 +49,7 @@
 .RDP_iframeSize {
     width: 100%;
     height: 46vh;
+    padding: 0; /* EGA - added this row */
 }
 
 .RDP_flexBox {
