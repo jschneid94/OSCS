@@ -50,7 +50,6 @@ $("#EGA_stackoverflowApiLogo").on('click', function () {
     $(this).toggleClass('EGA_activeToggle');
   }
 
-
 });
 
 // AMAZON API TOGGLE SWITCH
