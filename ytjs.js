@@ -8,6 +8,7 @@ function checkInput() {
         //Check to see if there is any text entered
         // If there is no text within the input ten disable the button
         return false;
+
     };
 
 };
@@ -95,7 +96,6 @@ $(document).ready(function () {
         function loadVids() {
 
             $.getJSON(queryURL, options, function (data) {
-                console.log(data, "data");
                 mainVid(data);
                 resultsLoop(data);
             });
@@ -107,11 +107,13 @@ $(document).ready(function () {
 
             var id = data.items[0].id.videoId;
 
-            var mainDiv = $("<div class='results' id='RDP_mainDiv' data-key='" + data.items[0].snippet.thumbnails.high.url + "' data-url='https://www.youtube.com/watch?v=" + id + "'></div>");
+            var mainDiv = $("<div class='results container' id='RDP_mainDiv' data-key='" + data.items[0].snippet.thumbnails.high.url + "' data-url='https://www.youtube.com/watch?v=" + id + "'></div>");
 
-            var vidDiv = $("<iframe class='RDP_iframeSize' src='https://www.youtube.com/embed/" + id + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+            var vidDiv = $("<iframe class='RDP_iframeSize col-md-12' src='https://www.youtube.com/embed/" + id + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 
-            var titleDiv = $("<div class='row RDP_bold' id='RDP_titleDiv' data-key='" + data.items[0].snippet.title + "'></div>");
+            var row = $("<div class='row'></div>");
+
+            var titleDiv = $("<div class='col-md-12 RDP_bold' id='RDP_titleDiv' data-key='" + data.items[0].snippet.title + "'></div>");
 
             var title = $("<p class='RDP_title col-md-12'>" + data.items[0].snippet.title + "</p>");
 
@@ -123,7 +125,9 @@ $(document).ready(function () {
 
             descDiv.append(desc, button);
 
-            titleDiv.append(title);
+            row.append(title);
+
+            titleDiv.append(row);
 
             mainDiv.append(vidDiv, titleDiv, descDiv);
 
@@ -169,11 +173,13 @@ $(document).ready(function () {
 
                 var thumb = $(this).attr("data-thumb");
 
-                var mainDiv = $("<div class='results' id='RDP_mainDiv' data-key='" + thumb + "' data-url='" + url + "'></div>");
+                var mainDiv = $("<div class='results container' id='RDP_mainDiv' data-key='" + thumb + "' data-url='" + url + "'></div>");
 
-                var vidDiv = $("<iframe class='RDP_iframeSize' src='" + embed + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+                var vidDiv = $("<iframe class='RDP_iframeSize col-md-12' src='" + embed + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 
-                var titleDiv = $("<div class='row RDP_bold' id='RDP_titleDiv' data-key='" + title + "'></div>");
+                var row = $("<div class='row'></div>");
+
+                var titleDiv = $("<div class='col-md-12 RDP_bold' id='RDP_titleDiv' data-key='" + title + "'></div>");
 
                 var title = $("<p class='RDP_title col-md-12'>" + title + "</p>");
 
@@ -185,7 +191,9 @@ $(document).ready(function () {
 
                 descDiv.append(desc, button);
 
-                titleDiv.append(title);
+                row.append(title);
+
+                titleDiv.append(row);
 
                 mainDiv.append(vidDiv, titleDiv, descDiv);
 
@@ -193,6 +201,7 @@ $(document).ready(function () {
 
                 $(".RDP_empty").empty();
 
+                // calling function created below
                 addMainVid();
 
                 // function to add main video to the section with other thumbnails
@@ -217,6 +226,8 @@ $(document).ready(function () {
                     $('#RDP_smallerVids').prepend(newDiv);
                 };
 
+                // had to make another on click function to allow the prepended div to be clickable
+                // was able to use same function from above
                 $(".RDP_clickMe").on("click", function () {
 
                     var embed = $(this).attr("data-embed");
@@ -229,11 +240,13 @@ $(document).ready(function () {
 
                     var thumb = $(this).attr("data-thumb");
 
-                    var mainDiv = $("<div class='results' id='RDP_mainDiv' data-key='" + thumb + "' data-url='" + url + "'></div>");
+                    var mainDiv = $("<div class='results container' id='RDP_mainDiv' data-key='" + thumb + "' data-url='" + url + "'></div>");
 
-                    var vidDiv = $("<iframe class='RDP_iframeSize' src='" + embed + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+                    var vidDiv = $("<iframe class='RDP_iframeSize col-md-12' src='" + embed + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 
-                    var titleDiv = $("<div class='row RDP_bold' id='RDP_titleDiv' data-key='" + title + "'></div>");
+                    var row = $("<div class='row'></div>");
+
+                    var titleDiv = $("<div class='col-md-12 RDP_bold' id='RDP_titleDiv' data-key='" + title + "'></div>");
 
                     var title = $("<p class='RDP_title col-md-12'>" + title + "</p>");
 
@@ -245,7 +258,9 @@ $(document).ready(function () {
 
                     descDiv.append(desc, button);
 
-                    titleDiv.append(title);
+                    row.append(title);
+
+                    titleDiv.append(row);
 
                     mainDiv.append(vidDiv, titleDiv, descDiv);
 
@@ -253,6 +268,7 @@ $(document).ready(function () {
 
                     $(".RDP_empty").empty();
 
+                    // calling the function to create the main video again to make sure layout is the same
                     addMainVid();
                 });
 
