@@ -35,17 +35,19 @@ $(document).ready(function () {
 
             // if stackoverflow set as obj with views, score, title, stackoverflow link
         } else if ($(this).parents(".EGA_stackoverflowContainer").length > 0) {
+            // $(this) = favorite btn
 
-            // ** TODO: get new class name from jordy
-            var esh_stackresult = $(this).parent().find(".card-body");
+            var esh_stackresult = $(this).parent().find(".jrsCardBody");
 
             // stack exchange - set to local storage as an array
-            esh_stackArr.push($(".card-title").attr("data-title"), $(".card-title").attr("data-link"));
+            esh_stackArr.push($(".EGA_cardTitle").attr("data-title"), $(".EGA_cardTitle").attr("data-link"));
             localStorage.setItem("stackFav-" + esh_stackcounter, JSON.stringify(esh_stackArr));
             esh_stackcounter++;
 
             // DONE: clone and append
-            $("#EGA_stackoverflowSubmenu").append(esh_stackresult.clone());
+            var esh_newStackFav = esh_stackresult.clone()
+            esh_newStackFav.addClass("esh_stackfav");
+            $("#EGA_stackoverflowSubmenu").append(esh_newStackFav);
         }
 
         // add class "favorited"
@@ -60,7 +62,7 @@ $(document).ready(function () {
 
         // DONEZO: remove chosen YOUTUBE result from sidebar
         // if main yt vid data-url matches any favorited yt video url on .favorited btn click, remove favorite div from sidebar
-        $(".esh_ytfav").each(function() {
+        $(".esh_ytfav").each(function () {
             var esh_ytunfave = $(this).find("a").attr("href");
             if ($(".results").attr("data-url") === esh_ytunfave) {
                 // OMGIDIDIT: point to yt fav div when it matches to remove
@@ -68,14 +70,23 @@ $(document).ready(function () {
             }
         });
 
-        // ** TODO: remove chosen STACK result from sidebar
+        // DONE: remove chosen STACK result from sidebar
+        $(".esh_stackfav").each(function () {
+            var esh_stackunfav = $(this).find("a").attr("href");
+            //console.log("in favorite" + esh_stackunfav);
+            var esh_stackresulthref = $(".jrsCard").find("a").attr("href");
+            //console.log("in result" + result_href);
+            if (esh_stackunfav === esh_stackresulthref) {
+              $(this).remove();
+            }
+        });
     });
-    
+
     // DONE: change button on hover to unfavorite
-    $(document).on("mouseenter", ".favorited", function() {
+    $(document).on("mouseenter", ".favorited", function () {
         $(this).html("<i class='fas fa-star'></i> Unfavorite?");
     });
-    $(document).on("mouseleave", ".favorited", function() {
+    $(document).on("mouseleave", ".favorited", function () {
         $(this).html("<i class='fas fa-star'></i> Favorited");
     });
 
