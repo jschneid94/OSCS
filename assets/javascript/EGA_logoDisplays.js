@@ -44,10 +44,12 @@ $("#EGA_stackoverflowApiLogo").on('click', function () {
     setTimeout(function(){
     $("#EGA_stackoverflowLogo").fadeToggle(500)}, 500);
     $(this).toggleClass('EGA_activeToggle');
+    $(".EGA_stackoverflowContainer").fadeToggle();
 
   } else {
     $("#EGA_stackoverflowLogo").fadeToggle(500);
     $(this).toggleClass('EGA_activeToggle');
+    $(".EGA_stackoverflowContainer").fadeToggle();
   }
 
 });
@@ -57,8 +59,10 @@ $("#EGA_stackoverflowApiLogo").on('click', function () {
 $("#EGA_amazonApiLogo").on('click', function () {
 
   if ($("#EGA_stackoverflowLogo").is(':visible')) {
+    $(".EGA_stackoverflowContainer").fadeToggle();
     $("#EGA_stackoverflowLogo").fadeOut(500);
     $("#EGA_stackoverflowApiLogo").toggleClass('EGA_activeToggle');
+
 
     setTimeout(function(){
     $("#EGA_amazonLogo").fadeToggle(500)}, 500);
