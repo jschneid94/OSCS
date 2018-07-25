@@ -100,7 +100,7 @@ $(document).ready(function() {
 
                 // Grid row for dynamic content
                 var jrsNewStackDiv = $("<div>");
-                jrsNewStackDiv.addClass("row");
+                jrsNewStackDiv.addClass("jrsRow row");
 
                 // Grid column for dynamic content
                 var jrsNewCardContainer = $("<div>");
