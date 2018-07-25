@@ -62,3 +62,7 @@
 .RDP_bold {
     font-weight: bolder;
 }
+
+.RDP_flex {
+    display: flex !important;
+}

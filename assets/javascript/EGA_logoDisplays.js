@@ -22,12 +22,16 @@ $("#EGA_githubApiLogo").on('click', function () {
 // YOUTUBE API TOGGLE SWITCH
 
 $("#EGA_youtubeApiLogo").on('click', function () {
-  
-  $("#EGA_youtubeLogo").fadeToggle();
-  $(this).toggleClass('EGA_activeToggle'); 
-  
+
+  $("#EGA_youtubeLogo").fadeToggle(); 
+  $(this).toggleClass('EGA_activeToggle');
+  $(".RDP_container").fadeToggle();
+  $(".RDP_secretContainer").fadeToggle();
+  $(".RDP_secretContainer2").fadeToggle();
+  $(".RDP_secretContainer2").toggleClass("RDP_flex");
 
 });
+
 
 // STACKOVERFLOW API TOGGLE SWITCH
 
@@ -45,7 +49,6 @@ $("#EGA_stackoverflowApiLogo").on('click', function () {
     $("#EGA_stackoverflowLogo").fadeToggle(500);
     $(this).toggleClass('EGA_activeToggle');
   }
-
 
 });
 

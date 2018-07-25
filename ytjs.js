@@ -162,7 +162,7 @@ $(document).ready(function () {
 
             // on click to replace main vid embedded with one of the thumbnails
             $(".RDP_thumb").on("click", function () {
-
+                console.log(this);
                 var embed = $(this).attr("data-embed");
 
                 var url = $(this).attr("data-url");
