@@ -30,7 +30,7 @@ $(document).ready(function () {
             // save to local storage as an array
             // DONE: add youtube link
             esh_ytArr.push(esh_ytthumbnail, esh_yttitle, esh_yturl);
-            localStorage.setItem("ytFav-" + esh_ytcounter, esh_ytArr);
+            localStorage.setItem("ytFav-" + esh_ytcounter, JSON.stringify(esh_ytArr));
             esh_ytcounter++;
 
             // if stackoverflow set as obj with views, score, title, stackoverflow link
@@ -40,7 +40,7 @@ $(document).ready(function () {
             var esh_stackresult = $(this).parent().find(".jrsCardBody");
 
             // stack exchange - set to local storage as an array
-            esh_stackArr.push($(".EGA_cardTitle").attr("data-title"), $(".EGA_cardTitle").attr("data-link"));
+            esh_stackArr.push(esh_stackresult.find(".EGA_cardTitle").attr("data-title"), esh_stackresult.find(".EGA_cardTitle").attr("data-link"));
             localStorage.setItem("stackFav-" + esh_stackcounter, JSON.stringify(esh_stackArr));
             esh_stackcounter++;
 
@@ -57,6 +57,9 @@ $(document).ready(function () {
     });
 
     $(document).on("click", ".favorited", function () {
+
+        var esh_theUrlToFind = $(this).parent().find("h5").data("link");
+
         // DONE: on click, change favorited button to favorite
         $(this).removeClass("favorited").addClass("favorite").html("<i class='fas fa-star'></i> Favorite").attr("data-target", "#favModal");
 
@@ -73,11 +76,11 @@ $(document).ready(function () {
         // DONE: remove chosen STACK result from sidebar
         $(".esh_stackfav").each(function () {
             var esh_stackunfav = $(this).find("a").attr("href");
-            //console.log("in favorite" + esh_stackunfav);
-            var esh_stackresulthref = $(".jrsCard").find("a").attr("href");
+            console.log("in favorite" + esh_stackunfav);
+            //var esh_stackresulthref = $(".jrsCard").find("a").attr("href");
             //console.log("in result" + result_href);
-            if (esh_stackunfav === esh_stackresulthref) {
-              $(this).remove();
+            if (esh_stackunfav === esh_theUrlToFind) {
+                $(this).remove();
             }
         });
     });
