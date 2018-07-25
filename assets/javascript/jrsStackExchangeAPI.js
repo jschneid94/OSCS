@@ -11,7 +11,7 @@ function checkInput() {
     
     if ($("#jrs_searchBar").val() === "") {
         //Check to see if there is any text entered
-        // If there is no text within the input ten disable the button
+        // If there is no text within the input then don't return anything
         return false;
     }
 
@@ -20,6 +20,7 @@ function checkInput() {
 function buttonChecked() {
 
     var radio = document.getElementsByName("radio");
+    var val;
     if(radio[0].checked) {
         var val = radio[0].value;
         console.log(val);
@@ -28,25 +29,29 @@ function buttonChecked() {
     else if(radio[1].checked) {
         var val = radio[1].value;
         console.log(val);
+        return val;
     }
     else if(radio[2].checked) {
         var val = radio[2].value;
-        console.log(val)
+        console.log(val);
+        return val;
     }
     else if(radio[3].checked) {
         var val = radio[3].value;
         console.log(val)
+        return val;
     }
     else if(radio[4].checked) {
         var val = radio[4].value;
-        console.log(val)
+        console.log(val);
+        return val;
     }
     else if(radio[5].checked) {
         var val = radio[5].value;
-        console.log(val)
+        console.log(val);
+        return val;
     }
 
-    jrsSearchTerms.push(val);
 }
 
 $(document).ready(function() {
@@ -55,9 +60,6 @@ $(document).ready(function() {
     $("#jrs_submit").on("click", function() {
 
         event.preventDefault();
-
-        // Checks which radio button is pushed and adds to the search term
-        buttonChecked();
 
         // Empty the column before pushing results
         emptyColumn();
@@ -69,8 +71,13 @@ $(document).ready(function() {
         var jrsUserInput = $("#jrs_searchBar").val();
         jrsSearchTerms = jrsUserInput.split(" ");
 
+        // 
+        var jrsRadioButton = buttonChecked();
+        jrsSearchTerms.unshift(jrsRadioButton);
+
         // Creates a string that will be used for the queryURL
         var jrsStackSearchTerm = jrsSearchTerms.join(" ");
+        console.log(jrsStackSearchTerm);
 
         // Query URL with the following parameters:
             // similar --> yields results that contain similar keywords
@@ -91,84 +98,90 @@ $(document).ready(function() {
             // For loop will generate a new div for each result returned by the query
             for (var i = 0; i < jrsResult.length; i++) {
 
-                // Creates new div for each result
-                var jrsNewStackCard = $("<div>");
-                jrsNewStackCard.addClass("card mb-3 results");
+                // Grid row for dynamic content
+                var jrsNewStackDiv = $("<div>");
+                jrsNewStackDiv.addClass("row");
 
-                // Break variable for separating hexagons
-                var jrsBr = $("<br />")
+                // Grid column for dynamic content
+                var jrsNewCardContainer = $("<div>");
+                jrsNewCardContainer.addClass("col-sm-12")
 
-                // Container for both columns
-                var jrsNewCardContainer = $("<div>")
-                jrsNewCardContainer.addClass("card-body row");
+                // Card to contain all content
+                var jrsNewCard = $("<div>");
+                jrsNewCard.addClass("card jrsCard");
 
-                // Column with the stack logo, view count, and top rated score.
-                var jrsStatsColumn = $("<div>");
-                jrsStatsColumn.addClass("col-md-3");
+                // Card body for all content
+                var jrsNewCardBody = $("<div>");
+                jrsNewCardBody.addClass("card-body jrsCardBody EGA_cardBody");
 
-                    // Stack logo
+                // STATS SECTION
+                var jrsStatsSection = $("<div>");
+                jrsStatsSection.addClass("jrsStatsSection");
+
+                    // Stack Overflow Logo
                     var jrsStackLogo = $("<img>");
-                    jrsStackLogo.addClass("row mx-auto mb-3 jrsStackLogo")
+                    jrsStackLogo.addClass("jrsImg")
                                 .attr("src", "assets/images/jrsStackLogo.png");
 
-                    // Hexagon that will contain the view count
-                    var jrsViewHex = $("<div>");
-                    jrsViewHex.addClass("row mx-auto my-2 hexagon text-center");
+                    // Stack Overflow view count
+                    var jrsViewBox = $("<div>");
+                    jrsViewBox.addClass("jrsStat EGA_viewBox my-2");
 
-                        // Text for view count
                         var jrsViewCount = $("<div>");
-                        jrsViewCount.addClass("jrsStatText mx-auto my-auto")
-                                    .text("Views ");
-                        // Adds the count number on a new line
-                        jrsViewCount.append("<div>" + jrsResult[i].view_count + "</div>");
-                    jrsViewHex.append(jrsViewCount);
+                        jrsViewCount.text("Views")
+                               .append("<div>" + jrsResult[i].view_count + "</div>");
 
-                    // Hexagon that will contain the top rated score
-                    var jrsScoreHex = $("<div>");
-                    jrsScoreHex.addClass("row mx-auto my-2 hexagon text-center");
+                        jrsViewBox.append(jrsViewCount);
 
-                        // Text for rated score
+                    // Stack Overflow score
+                    var jrsScoreBox = $("<div>");
+                    jrsScoreBox.addClass("jrsStat EGA_viewBox my-2")
+
                         var jrsScoreCount = $("<div>");
-                        jrsScoreCount.addClass("jrsStatText mx-auto my-auto")
-                                    .text("Score ");
-                        // Adds the score number on a new line
-                        jrsScoreCount.append("<div>" + jrsResult[i].score + "</div>");
-                    jrsScoreHex.append(jrsScoreCount);
+                        jrsScoreCount.text("Score")
+                                     .append("<div>" + jrsResult[i].score + "</div>");
 
-                // Appends the logo, the views hex, a break and the score hex to the left column
-                jrsStatsColumn.append(jrsStackLogo, jrsViewHex, jrsBr, jrsScoreHex);
+                        jrsScoreBox.append(jrsScoreCount);
+                        
+                    jrsStatsSection.append(jrsStackLogo, jrsViewBox, jrsScoreBox);
 
-                // Column with the result title and link to stack overflow
-                var jrsStackTitleButton = $("<div>");
-                jrsStackTitleButton.addClass("col-md-9 jrsStackTitleButton");
+                // TITLE AND BUTTON SECTION
+                var jrsTitleSection = $("<div>");
+                jrsTitleSection.addClass("jrsTitleSection");
 
-                    // Title of the result question
-                    var jrsStackTitle = $("<h5>");
-                    jrsStackTitle.addClass("card-title text-center mb-2")
-                                .text(jrsResult[i].title)
-                                // Adds data attributes for later reference
-                                .attr("data-resultNum", i)
-                                .attr("data-link", jrsResult[i].link)
-                                .attr("data-title", jrsResult[i].title);
+                    // Stack Overflow Question
+                    var jrsTitle = $("<h5>");
+                    jrsTitle.addClass("card-title mb-2 EGA_cardTitle")
+                            .text(jrsResult[i].title)
+                            .attr("data-link", jrsResult[i].link)
+                            .attr("data-title", jrsResult[i].title);
+                        
+                    // Section containing the button
+                    var jrsButtonSection = $("<div>");
 
-                    // Button that sends user to result link on a new tab
-                    var jrsStackButton = $("<a>");
-                    jrsStackButton.addClass("btn row mx-auto text-light jrsStackButton")
-                                .text("Go to StackOverflow")
-                                .attr("href", jrsResult[i].link)
-                                .attr("target", "_blank");
-                // Appends the title and button to the right column.
-                jrsStackTitleButton.append(jrsStackTitle, jrsStackButton);
-                
-                jrsNewCardContainer.append(jrsStatsColumn, jrsStackTitleButton);
+                        // Button that sends user to link in a new tab
+                        var jrsButton = $("<a>");
+                        jrsButton.attr("href", jrsResult[i].link)
+                                 .attr("target", "_blank")
+                                 .addClass("btn btn-primary mx-auto jrsButton")
+                                 .text("Visit page");
+
+                        jrsButtonSection.append(jrsButton);
+
+                    jrsTitleSection.append(jrsTitle, jrsButtonSection);
+
+                jrsNewCardBody.append(jrsStatsSection, jrsTitleSection);
+
+                jrsNewCard.append(jrsNewCardBody);
+                jrsNewCardContainer.append(jrsNewCard);
 
                 var esh_button = $("<button type='button' class='btn btn-light favorite' data-toggle='modal' data-target='#favModal'><i class='fas fa-star'></i> Favorite</button>");
 
-                jrsNewStackCard.append(jrsNewCardContainer, esh_button);
+                jrsNewStackDiv.append(jrsNewCardContainer, esh_button);
 
                 // Appends the div to the stack output column in the DOM
-                $(".EGA_stackoverflowContainer").append(jrsNewStackCard);
-
+                $(".EGA_stackoverflowContainer").append(jrsNewStackDiv);
+                                 
             }
 
         });
