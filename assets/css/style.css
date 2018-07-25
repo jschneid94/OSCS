@@ -446,6 +446,7 @@ a.article:hover {
     line-height: 1.6em;
     padding: 0px 10px 20px 0px;
     text-align: left;
+    color: black;
 }
 
 .jrsStat {
