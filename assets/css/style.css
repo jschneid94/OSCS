@@ -531,6 +531,9 @@ a.article:hover {
     text-align: right;
 }
 
+.jrsRow > .favorited { /*EGA - Added this row to space the vaforite button specific to the stack column */
+    margin: 20px;
+}
 /* MEDIA QUERIES */
 
 
