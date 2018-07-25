@@ -431,11 +431,13 @@ a.article:hover {
 /* STACK EXCHANGE API */
 .EGA_container {
     width: 300px;
+    padding-top: 30px;
+    min-width: 0;
 }
 
 .EGA_cardBody {
     display: flex;
-    justify-content: center;
+    justify-content: stretch;
     background-color: rgb(255, 255, 255);
     border: 1px black solid;
 }
