@@ -3,59 +3,122 @@
 
 <head>
 
-  <meta   charset="utf-8">
-  <meta   name="viewport" 
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta   charset="utf-8">
+    <meta   name="viewport" 
+            content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link   rel="stylesheet" 
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" 
-          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
-          crossorigin="anonymous">
+    <link   rel="stylesheet" 
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" 
+            integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+            crossorigin="anonymous">
 
-  <link   rel="stylesheet" 
-          href="assets/css/style.css">
+    <link   rel="stylesheet" 
+            href="assets/css/style.css">
 
-  <link   rel="stylesheet" 
-          href="ytCSS.css">
+    <link   rel="stylesheet" 
+            href="assets/css/ytCSS.css">
 
-  <title>CODE STUDY</title>
+    <link   rel="stylesheet" 
+            href="assets/css/sidebar.css">
+
+    <title>CODE STUDY</title>
 
 </head>
 
 <body>
 
 <!-- MODAL SECTION -->
-<div class="modal fade" id="favModal" tabindex="-1" role="dialog" aria-labelledby="favModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="favModalLabel">Added to Favorites!</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div    class="modal fade" 
+            id="favModal" 
+            tabindex="-1" 
+            role="dialog" 
+            aria-labelledby="favModalLabel" 
+            aria-hidden="true">
 
-      <div class="modal fade" id="unfavModal" tabindex="-1" role="dialog" aria-labelledby="unfavModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="unfavModalLabel">Removed from Favorites!</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div    class="modal-dialog" 
+                role="document">
+
+          <div    class="modal-content">
+
+            <div    class="modal-header">
+
+                <h5     class="modal-title" 
+                        id="favModalLabel">
+                        Added to Favorites!
+                </h5>
+
+              <button   type="button" 
+                        class="close" 
+                        data-dismiss="modal" 
+                        aria-label="Close">
+
                 <span aria-hidden="true">&times;</span>
+
               </button>
+
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                <div class="modal-footer">
+
+                    <button     type="button" 
+                                class="btn btn-secondary" 
+                                data-dismiss="modal">
+                                Close
+                    </button>
+
+                </div>
+
             </div>
-          </div>
+
         </div>
-      </div>
+
+    </div>
+
+    <div    class="modal fade" 
+            id="unfavModal" 
+            tabindex="-1" 
+            role="dialog" 
+            aria-labelledby="unfavModalLabel" 
+            aria-hidden="true">
+
+        <div    class="modal-dialog" 
+                role="document">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title" 
+                        id="unfavModalLabel">
+                        Removed from Favorites!
+                    </h5>
+
+                    <button type="button" 
+                            class="close" 
+                            data-dismiss="modal" 
+                            aria-label="Close">
+
+                    <span aria-hidden="true">&times;</span>
+
+                    </button>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="button" 
+                            class="btn btn-secondary" 
+                            data-dismiss="modal">
+                            Close
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 <!-- END OF MODAL SECTION -->
   
@@ -65,7 +128,9 @@
 
     <div class="row EGA_apiRow">
 
-      <div class="col-lg-2 col-md-2 col-sm-2 col-3"></div>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-3">
+
+      </div>
 
       <div class="col-lg-2 col-md-2 col-sm-2 col-3">
 
@@ -122,7 +187,7 @@
 
     <div class="row EGA_searchRow">
 
-      <div class="col-lg-6 col-md-6 EGA_radioColumn">
+      <div class="col-xl-6 col-lg-6 col-md-6 EGA_radioColumn">
 
         <div  class="btn-group btn-group-toggle EGA_radioBoxes" 
               data-toggle="buttons">
@@ -207,7 +272,7 @@
 
 <!-- SEARCH BAR SECTION -->
 
-      <div class="col-lg-6 col-md-6 EGA_searchbarDiv">
+      <div class="col-xl-6 col-lg-6 col-md-6 EGA_searchbarDiv">
 
         <nav class="navbar navbar-light EGA_navbar">
 
@@ -243,186 +308,122 @@
 
     <div class="row EGA_displayRow">
 
-      <div class="col-lg-3 col-md-3 EGA_gitHubColumns">
-        <div class="EGA_logoDiv">
-          <img  src="assets/images/EGA_githubLogo.png" 
-                class="hidden" 
-                id="EGA_githubLogo" 
-                alt="">
-        </div>
-        <div class="EGA_logoDiv">
-          <img  src="assets/images/EGA_spotifyLogo.png" 
-                class="hidden" 
-                id="EGA_spotifyLogo"
-                alt="">
-        </div>
-        <div class="EGA_githubContainer">
+        <div class="col-xl-3 col-lg-3 col-md-3 EGA_gitHubColumns">
+            <div class="EGA_logoDiv">
+            <img  src="assets/images/EGA_githubLogo.png" 
+                    class="hidden" 
+                    id="EGA_githubLogo" 
+                    alt="">
+            </div>
+            <div class="EGA_logoDiv">
+            <img  src="assets/images/EGA_spotifyLogo.png" 
+                    class="hidden" 
+                    id="EGA_spotifyLogo"
+                    alt="">
+            </div>
+            <div class="EGA_githubContainer">
 
-          <!-- INSERT DYNAMIC GITHUB CONTENT HERE -->
+<!-- SIDEBAR BEGINNING -->
 
-        </div>
+                <div id='cssmenu'>
+                    <ul>
+                       <li class='active'><a href='#'><span>FAVORITES</span></a></li>
+                       <li class='has-sub'><a href='#'><span>YOUTUBE</span></a>
+                          <ul>
+                             <li><div id="EGA_youtubeSubmenu"></div></li>
+                          </ul>
+                       </li>
+                       <li class='has-sub'><a href='#'><span>STACKOVERFLOW</span></a>
+                          <ul>
+                             <li><div id="EGA_stackoverflowSubmenu"></div></li>
+                          </ul>
+                       
+                    </ul>
+                </div>
 
-      </div>
+<!-- SIDEBAR END -->
 
-      <div class="col-lg-6 col-md-6 EGA_youTubeColumns">
-        <div class="EGA_logoDiv">
-            <img  src="assets/images/EGA_youtubeLogo.png" 
-                class="hidden" 
-                id="EGA_youtubeLogo" 
-                alt="">
-        </div>
-        <div class="EGA_youtubeContainer">
-
-          <!-- INSERT DYNAMIC YOUTUBE CONTENT HERE -->
-          <div class="container RDP_container hidden">
-
-              <div id="RDP_videosHere" class="container"></div>
-
-          </div>
-
-          <p id="RDP_thumbDesc" class="RDP_secretContainer hidden"></p>
-
-          <div class="row RDP_secretContainer2 hidden">
-
-              <div class="col-md-1"></div>
-
-              <div id="RDP_smallerVids" class="RDP_flexBox col-md-10"></div>
-
-          </div>
+            </div>
 
         </div>
 
-      </div>
+        <div class="col-xl-6 col-lg-5 col-md-5 EGA_youTubeColumns">
 
-      <div class="col-lg-3 col-md-3 EGA_stackOverFlowColumns">
+            <div class="EGA_logoDiv">
+                <img  src="assets/images/EGA_youtubeLogo.png" 
+                    class="hidden" 
+                    id="EGA_youtubeLogo" 
+                    alt="">
+            </div>
+
+            <div class="EGA_youtubeContainer">
+
+            <!-- INSERT DYNAMIC YOUTUBE CONTENT HERE -->
+                <div class="container RDP_container hidden">
+
+                    <div    id="RDP_videosHere" 
+                            class="container">
+                    </div>
+
+                </div>
+
+                <p  id="RDP_thumbDesc" 
+                    class="RDP_secretContainer hidden">
+                </p>
+
+                <div class="row RDP_secretContainer2 hidden">
+
+                    <div    class="col-md-1">
+
+                    </div>
+
+                    <div    id="RDP_smallerVids" 
+                            class="RDP_flexBox col-md-10">
+                    </div>
+
+                </div>
+
+            </div>
             
-        <div class="EGA_logoDiv">
+        </div>
+
+        <div class="col-xl-3 col-lg-4 col-md-4 EGA_stackOverFlowColumns">
+            
+            <div class="EGA_logoDiv">
             <img  src="assets/images/EGA_stackoverflowLogo.png" 
                 class="hidden" 
                 id="EGA_stackoverflowLogo" 
                 alt="">
-        </div>
-        <div class="EGA_logoDiv">
-            <img  src="assets/images/EGA_amazonLogo.png" 
-                class="hidden" 
-                id="EGA_amazonLogo" 
-                alt="">
-        </div>
+            </div>
+
+            <div class="EGA_logoDiv">
+                <img  src="assets/images/EGA_amazonLogo.png" 
+                    class="hidden" 
+                    id="EGA_amazonLogo" 
+                    alt="">
+            </div>
         
-        <div class="EGA_stackoverflowContainer container EGA_container hidden">
+            <div class="EGA_stackoverflowContainer container EGA_container hidden">
 
-        <!-- INSERT DYNAMIC STACKOVERFLOW CONTENT HERE -->
+            <!-- INSERT DYNAMIC STACKOVERFLOW CONTENT HERE -->
 
-        </div>
+            </div>
+
         </div>
       
-
     </div>
     
 <!-- END OF DYNAMIC LOGO SECTION -->
 
-<!-- SIDE BAR MENU SECTION -->
-<div class="wrapper">
-    <!-- Sidebar  -->
-    <nav id="sidebar">
-        <div id="dismiss">
-            <i class="fas fa-arrow-left"></i>
-        </div>
-
-        <div class="sidebar-header">
-            <h3>YOUR FAVORITES</h3>
-        </div>
-
-        <ul class="list-unstyled components">
-            <p>Search Template</p>
-
-            <li class="active">
-                <a  href="#EGA_githubSubmenu" 
-                    data-toggle="collapse" 
-                    aria-expanded="false">
-                    GITHUB
-                </a>
-                <!-- <ul class="collapse list-unstyled" 
-                    id="EGA_githubSubmenu">
-                    
-                </ul> -->
-            </li>
-            
-            <li class="active">
-                <a  href="#EGA_youtubeSubmenu" 
-                    data-toggle="collapse" 
-                    data-parent="#accordion" 
-                    aria-expanded="false">
-                    YOUTUBE
-                </a>
-                <ul class="collapse list-unstyled" 
-                    id="EGA_youtubeSubmenu">
-                    
-                </ul>
-            </li>
-            <li class="active">
-                <a  href="#EGA_stackoverflowSubmenu" 
-                    data-toggle="collapse"
-                    data-parent="#accordion" 
-                    aria-expanded="false">
-                    STACKOVERFLOW
-                </a>
-                <ul class="collapse list-unstyled" 
-                    id="EGA_stackoverflowSubmenu">
-                    
-                </ul>
-            </li>
-        </ul>
-
-        <ul class="list-unstyled CTAs">
-            <li>
-                <a  href="https://bootstrapious.com/tutorial/files/sidebar.zip" 
-                    class="download">
-                    Download source
-                </a>
-            </li>
-            <li>
-                <a  href="https://bootstrapious.com/p/bootstrap-sidebar" 
-                    class="article">
-                    Back to article
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- Page Content  -->
-    <div id="content">
-
-        <nav class="">
-
-            <div class="container-fluid">
-
-                <button type="button" 
-                        id="EGA_sidebarCollapse" 
-                        class="btn btn-info">
-
-                    <i class="fas fa-align-left"></i>
-
-                    <span id="EGA_spanFavorites">FAVORITES</span>
-
-                </button>
-
-            </div>
-        </nav>
-</div>
-
-<div class="overlay"></div>
-
-<!-- END OF SIDE BAR MENU -->
 
 <!-- FOOTER SECTION -->
 
-    <div  class="card-footer"
-          id="EGA_footer">
+    <div    class="card-footer"
+            id="EGA_footer">
 
-      <small  class="text-muted">
+        <small  class="text-muted">
             
-      </small>
+        </small>
 
     </div>
 
@@ -469,17 +470,15 @@
   <script   src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"> </script>
 
 
-  <script   src="assets/javascript/EGA_logoDisplays.js"> </script>
+  <script   src="assets/javascript/EGA_app.js"> </script>
 
-  <script   src="assets/javascript/EGA_footerTimer.js"> </script>
+  <script   src="assets/javascript/jrsStackSxchangeAPI.js"> </script>
 
-  <script   src="assets/javascript/jrsStackExchangeAPI.js"> </script>
-
-  <script   src="ytjs.js"> </script>
+  <script   src="assets/javascript/ytjs.js"> </script>
 
   <script   src="https://apis.google.com/js/client.js?onload=googleApiClientReady"> </script>
 
-  <script   src="esh_app.js"></script>
+  <script   src="assets/javascript/esh_app.js"></script>
 
 </body>
 

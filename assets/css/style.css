@@ -9,6 +9,10 @@
     padding: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 /* API IMAGE SECTION */
 
 
@@ -46,6 +50,7 @@
     padding-top: 40px;
     
 }
+/* END OF API IMAGE SECTION */
 
 /* SEARCH BAR SECTION */
 
@@ -81,6 +86,7 @@
     float:right;
     
 }
+/* END OF SEARCH BAR SECTION */
 
 /* RADIO BUTTONS SECTION */
 
@@ -91,6 +97,19 @@
 .EGA_radioButton {
     display: inline-block;
     float: left;
+}
+
+.EGA_radioButton:active {
+    border-radius: 50%;
+    box-shadow:
+        inset 0 0 50px #fff,      /* inner white */
+        inset 20px 0 20px #D9CFE7,   /* inner left magenta short */
+        inset -20px 0 20px #0ff,  /* inner right cyan short */
+        inset 20px 0 60px #D9CFE7,  /* inner left magenta broad */
+        inset -20px 0 60px #0ff, /* inner right cyan broad */
+        0 0 50px #fff,            /* outer white */
+        -10px 0 40px #D9CFE7,        /* outer left magenta */
+        10px 0 40px #0ff;         /* outer right cyan */
 }
 
 .input-group-text{
@@ -123,6 +142,7 @@ input[type=checkbox] {
     height: 40px;
 }
 
+
 .radio-inline {
     padding: 15px;
 }
@@ -132,14 +152,12 @@ input[type=checkbox] {
     border-color: #50697D
 }
 
+/* END OF RADIO BUTTONS SECTION */
+
 /* DISPLAY AREA COLUMNS */
 
 .EGA_logoDiv {
     text-align: center;
-}
-
-.EGA_displayRow {
-
 }
 
 .EGA_gitHubColumns {
@@ -151,7 +169,6 @@ input[type=checkbox] {
     
 }
 
-
 .EGA_youTubeColumns {
     background: #50697D;
     width: 100%;
@@ -162,7 +179,6 @@ input[type=checkbox] {
     display: hidden;
 }
 
-
 .EGA_stackOverFlowColumns {
     background: #D9CFE7;
     width: 100%;
@@ -170,6 +186,8 @@ input[type=checkbox] {
     justify-content: center;
     padding-top: 20px;
 }
+
+/* DISPLAY AREA COLUMNS */
 
 /* DYNAMIC LOGOS */
 
@@ -184,16 +202,14 @@ input[type=checkbox] {
     
     max-height: 50px;
     margin-top: 10px;
-    
-       
+        
 }
 
 #EGA_githubLogo  {
     
     max-height: 35px;
     margin-top: 10px; 
-    
-      
+     
 }
 
 #EGA_spotifyLogo  {
@@ -201,16 +217,16 @@ input[type=checkbox] {
     max-height: 50px;
     margin-top: 10px; 
 
-     
 }
 
 #EGA_amazonLogo {
 
     max-height: 75px;
     margin-top: 10px;
-    
-    
+     
 }
+
+/* END OF DYNAMIC LOGOS */
 
 /* FOOTER */
 
@@ -220,215 +236,19 @@ input[type=checkbox] {
     color: white;
     text-align: center;
 }
-.hidden {
-    display: none;
-}
 
-/* SIDE BAR CONTENT */
-
-/*
-    DEMO STYLE
-*/
-
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-
-a,
-a:hover,
-a:focus {
-    color: inherit;
-    text-decoration: none;
-    transition: all 0.3s;
-}
+/* END OF FOOTER SECTION */
 
 
-.line {
-    width: 100%;
-    height: 1px;
-    border-bottom: 1px dashed #ddd;
-    margin: 40px 0;
-}
 
-/* ---------------------------------------------------
-    SIDEBAR STYLE
------------------------------------------------------ */
-
-#sidebar {
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: -250px;
-    height: 100vh;
-    z-index: 999;
-    background: #7386D5;
-    color: #fff;
-    transition: all 0.3s;
-    overflow-y: scroll;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-}
-
-#sidebar.active {
-    left: 0;
-}
-
-#dismiss {
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    text-align: center;
-    background: #7386D5;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    -webkit-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-#dismiss:hover {
-    background: #fff;
-    color: #7386D5;
-}
-
-.overlay {
-    display: none;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 998;
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-}
-.overlay.active {
-    display: block;
-    opacity: 1;
-    top: 0;
-}
-
-#sidebar .sidebar-header {
-    padding: 20px;
-    background: #6d7fcc;
-}
-
-#EGA_sidebarCollapse {
-    background-color: rgb(86, 133, 148);
-    border-color: rgb(86, 133, 148);
-}
-
-#EGA_youtubeSubmenu {
-    padding: 10px;
-}
-#EGA_stackoverflowSubmenu {
-    padding: 10px;
-}
-#EGA_githubSubmenu {
-    padding: 10px;
-}
-
-#mCSB_1 {
-    overflow-y: auto;
-}
-.results {
-    margin: 5px;
-}
-#EGA_spanFavorites {
-    margin-left: 10px;
-}
-
-#EGA_sidebarCollapse:hover {
-    background-color: #324856;
-    border-color: #324856;
-}
-#sidebar ul.components {
-    padding: 20px 0;
-}
-
-#sidebar ul p {
-    color: #fff;
-    padding: 10px;
-}
-
-#sidebar ul li a {
-    padding: 10px;
-    font-size: 1.1em;
-    display: block;
-}
-
-#sidebar ul li a:hover {
-    color: #7386D5;
-    background: #fff;
-}
-
-#sidebar ul li.active>a,
-a[aria-expanded="true"] {
-    color: #fff;
-    background: #6d7fcc;
-}
-
-a[data-toggle="collapse"] {
-    position: relative; 
-}
-
-.mCSB_container {
-    top: 0;
-}
-#mCSB_1_container {
-    top: 0;
-}
-
-.dropdown-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-}
+/* -------------------
+DISPLAY AREA 
+------------------- */
 
 
-ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-    background: #6d7fcc;
-}
-
-ul.CTAs {
-    padding: 20px;
-}
-
-ul.CTAs a {
-    text-align: center;
-    font-size: 0.9em !important;
-    display: block;
-    border-radius: 5px;
-    margin-bottom: 5px;
-}
-
-a.download {
-    background: #fff;
-    color: #7386D5;
-}
-
-a.article,
-a.article:hover {
-    background: #6d7fcc !important;
-    color: #fff !important;
-}
-
-/* ---------------------------------------------------
-    CONTENT STYLE
------------------------------------------------------ */
-
-#content {
-    width: 100px;
-    padding: 20px;
-    transition: all 0.3s;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
 
 /* STACK EXCHANGE API */
+
 .EGA_container {
     width: 300px;
     padding-top: 30px;
@@ -436,10 +256,11 @@ a.article:hover {
 }
 
 .EGA_cardBody {
-    display: flex;
+    /* display: flex; */
     justify-content: stretch;
     background-color: rgb(255, 255, 255);
     border: 1px black solid;
+    margin: 10px;
 }
 
 .EGA_cardTitle {
@@ -450,7 +271,13 @@ a.article:hover {
     color: black;
 }
 
+.jrsCard {
+    background-color: transparent;
+    border: none;
+}
+
 .jrsStat {
+    max-width: 60px;
     border: 1px solid white;
     border-radius: 5px;
     display: flex;
@@ -474,7 +301,7 @@ a.article:hover {
 }
 .EGA_viewBox {
     align-self: stretch;
-    margin-top: 30px !important;
+    margin-top: 15px !important;
     margin-bottom: 0 !important;
     
 }
@@ -487,6 +314,7 @@ a.article:hover {
 }
 
 .jrsStatsSection {
+    float: left;
     display: flex;
     flex-direction: column;
 }
@@ -498,7 +326,10 @@ a.article:hover {
     align-items: center;
 }
 
+/* END OF STACK EXCHANGE API */
+
 /* FAVORITE ICON STYLING */
+
 .fa-star {
     color: rgb(255, 230, 88);
 }
@@ -534,6 +365,9 @@ a.article:hover {
 .jrsRow > .favorited { /*EGA - Added this row to space the vaforite button specific to the stack column */
     margin: 20px;
 }
+
+/* END OF FAVORITE ICON STYLING */
+
 /* MEDIA QUERIES */
 
 
@@ -554,7 +388,28 @@ a.article:hover {
     }
   }
   
-  @media screen and (max-width:768px){
+  @media only screen  and (max-width : 1224px) {
+    #EGA_stackoverflowSubmenu > div.jrsCardBody {
+        flex-direction: column-reverse;
+        display: contents;
+    }
+    #EGA_stackoverflowSubmenu > div.jrsCardBody > div.jrsStatsSection {
+        justify-self: center;
+        padding-top: 20px;
+    }
+    #EGA_stackoverflowSubmenu > div.jrsCardBody > div.jrsTitleSection {
+        padding: 10px;
+        border-bottom: 1px solid #50697D;
+    }
+    #EGA_stackoverflowSubmenu > div.jrsCardBody > div.jrsTitleSection > h5.EGA_cardTitle {
+        padding-top: 10px;
+        text-align: center;
+    }
+    #EGA_stackoverflowSubmenu > div.jrsCardBody > div.jrsTitleSection > div > a.jrsButton  {
+        margin-bottom: 10px;
+    }
+}
+  @media screen and (max-width:767px){
 
     .EGA_apiImg {
         width: 110px;
@@ -568,6 +423,16 @@ a.article:hover {
     }
     .btn-secondary {
         font-size: .8em;
+    }
+
+    #EGA_stackoverflowSubmenu > div.jrsCardBody {
+        display: flex;  
+        flex-direction: unset;
+        justify-content: space-around;
+
+    }
+    #EGA_stackoverflowSubmenu > div.jrsCardBody > div.jrsTitleSection {
+        border: none;
     }
   }
   @media screen and (max-width:715px){
@@ -600,3 +465,5 @@ a.article:hover {
         font-size: .6em;
     }
   }
+
+  /* END OF MEDIA QUERIES */
