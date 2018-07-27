@@ -67,11 +67,11 @@ $(document).ready(function() {
         // Check if user has typed anything in the search bar
         checkInput();   
 
-        // Grabs the search term and creates an array of each word
+        // Grabs the search term and creates an array with each word
         var jrsUserInput = $("#jrs_searchBar").val();
         jrsSearchTerms = jrsUserInput.split(" ");
 
-        // 
+        // Grabs the value of the radio button pressed and adds it to the search term
         var jrsRadioButton = buttonChecked();
         jrsSearchTerms.unshift(jrsRadioButton);
 
