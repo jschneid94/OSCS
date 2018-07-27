@@ -17,7 +17,7 @@ function checkInput() {
 function buttonChecked() {
 
     var radio = document.getElementsByName("radio");
-    
+
     if (radio[0].checked) {
         var val = radio[0].value;
         return val;
@@ -47,7 +47,7 @@ function buttonChecked() {
         var val = radio[5].value;
         return val;
     }
-
+   
 };
 
 $(document).ready(function () {
@@ -99,11 +99,9 @@ $(document).ready(function () {
         // function making the larger video on screen and formatting it
         function mainVid(data) {
 
-            var id = data.items[0].id.videoId;
+            var mainDiv = $("<div class='results container' id='RDP_mainDiv' data-key='" + data.items[0].snippet.thumbnails.high.url + "' data-url='https://www.youtube.com/watch?v=" + data.items[0].id.videoId + "'></div>");
 
-            var mainDiv = $("<div class='results container' id='RDP_mainDiv' data-key='" + data.items[0].snippet.thumbnails.high.url + "' data-url='https://www.youtube.com/watch?v=" + id + "'></div>");
-
-            var vidDiv = $("<iframe class='RDP_iframeSize col-md-12' src='https://www.youtube.com/embed/" + id + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+            var vidDiv = $("<iframe class='RDP_iframeSize col-md-12' src='https://www.youtube.com/embed/" + data.items[0].id.videoId + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
 
             var row = $("<div class='row RDP_row'></div>");
 
@@ -201,13 +199,11 @@ $(document).ready(function () {
                 // function to add main video to the section with other thumbnails
                 function addMainVid() {
 
-                    var id = data.items[0].id.videoId;
-
                     var desc = data.items[0].snippet.description;
 
                     var newDiv = $("<div class='RDP_item RDP_empty' data-key='" + data.items[0].snippet.thumbnails.high.url + "'></div>");
 
-                    var thumb = $('<img src="' + data.items[0].snippet.thumbnails.high.url + '" alt="" class="RDP_thumb RDP_clickMe" data-embed="https://www.youtube.com/embed/' + id + '" data-url="https://www.youtube.com/watch?v=' + id + '" data-title="' + data.items[0].snippet.title + '" data-desc="' + desc + '" data-thumb="' + data.items[0].snippet.thumbnails.high.url + '">');
+                    var thumb = $('<img src="' + data.items[0].snippet.thumbnails.high.url + '" alt="" class="RDP_thumb RDP_clickMe" data-embed="https://www.youtube.com/embed/' + data.items[0].id.videoId + '" data-url="https://www.youtube.com/watch?v=' + data.items[0].id.videoId + '" data-title="' + data.items[0].snippet.title + '" data-desc="' + desc + '" data-thumb="' + data.items[0].snippet.thumbnails.high.url + '">');
 
                     var titleDiv = $("<div class='RDP_titlediv' data-key='" + data.items[0].snippet.title + "'></div>");
 
