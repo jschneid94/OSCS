@@ -5,7 +5,7 @@ A search engine built for bootcampers, by bootcampers. OSCS is a web application
 Developers are frequently practicing their Google-fu, or their necessity to use Google to find solutions to the questions and issues they encounter when learning. This process can take some time, however, and OSCS seeks to reduce student's search time and pool resources faster.
 
 ## Screenshots
-TODO
+[One Stop Code Shop](/assets/images/screenshot.PNG)
 
 ## Tech/Libraries Used
 Built with:
